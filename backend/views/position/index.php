@@ -19,23 +19,27 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>
         <?= Html::a('Создать должность', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
-    <?try {?>
-    <?= \yiister\adminlte\widgets\grid\GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+    <div class="box box-primary">
+        <div class="box-body">
+            <?try {?>
+            <?= \yiister\adminlte\widgets\grid\GridView::widget([
+                'dataProvider' => $dataProvider,
+                'filterModel' => $searchModel,
+                'columns' => [
+                    ['class' => 'yii\grid\SerialColumn'],
 
-//            'id',
-            'title:ntext',
+        //            'id',
+                    'title:ntext',
 
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-        "condensed" => true,
-        "hover" => true,
-    ]); ?>
-    <?}catch (Exception $exception){
-        echo 'Не найден виджет';
-    }?>
+                    ['class' => 'yii\grid\ActionColumn'],
+                ],
+                "condensed" => true,
+                "hover" => true,
+            ]); ?>
+        <?}catch (Exception $exception){
+            echo 'Не найден виджет';
+        }?>
+        </div>
+    </div>
     <?php Pjax::end(); ?>
 </div>

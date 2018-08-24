@@ -22,6 +22,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'title') ?>
 
+    <?= $form->field($model, 'short_description') ?>
+
     <?= $form->field($model, 'description') ?>
 
     <?= $form->field($model, 'publish') ?>

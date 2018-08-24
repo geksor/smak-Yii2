@@ -34,7 +34,7 @@ class DoctorController extends Controller
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['logout', 'index'],
+                        'actions' => ['logout', 'index', 'view', 'create', 'update', 'delete', 'set-position', 'set-photo', 'set-table'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -231,5 +231,19 @@ class DoctorController extends Controller
             'model' => $model,
             'doctor' => $doctor,
         ]);
+    }
+
+    public function actionPublish($id, $publish)
+    {
+        if (Yii::$app->request->isAjax){
+
+            $model = $this->findModel($id);
+
+            $model->publish = (integer) $publish;
+
+            if ($model->save()){
+                return $this->redirect(['index']);
+            }
+        }
     }
 }

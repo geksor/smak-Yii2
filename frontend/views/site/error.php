@@ -7,21 +7,18 @@
 
 use yii\helpers\Html;
 
+\frontend\assets\AppAsset::register($this);
+
 $this->title = $name;
 ?>
 <div class="site-error">
-
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <div class="alert alert-danger">
-        <?= nl2br(Html::encode($message)) ?>
-    </div>
-
-    <p>
-        The above error occurred while the Web server was processing your request.
-    </p>
-    <p>
-        Please contact us if you think this is a server error. Thank you.
-    </p>
-
+    <section id="wrapper" class="container-fluid">
+        <div class="error-box">
+            <div class="error-body text-center">
+                <h1 class="text-success"><?= $exception->statusCode ?></h1>
+                <h3><?= nl2br(Html::encode($message)) ?></h3>
+                <a href="/" class="btn btn-success btn-rounded m-b-40">На главную</a>
+            </div>
+        </div>
+    </section>
 </div>

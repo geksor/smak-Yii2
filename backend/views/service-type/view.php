@@ -34,11 +34,22 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'title',
-            'description:ntext',
+            [
+                'attribute' => 'description',
+                'format' => 'html',
+                'value' => function ($data){
+                    return Html::tag('div', $data->description, ['class' => 'textWrap', 'style' => 'max-height: 400px']);
+                }
+            ],
             [
                 'attribute' => 'publish',
                 'label' => 'Состояние',
-                'value' => $model->getPublishState(),
+                'value' => function ($data){
+                    if ($data->publish){
+                        return 'Опубликовано';
+                    }
+                    return 'Не опубликовано';
+                }
             ],
             'order',
         ],
@@ -52,7 +63,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
         <p>
-            <?= Html::a('Создать услугу', ['create-item', 'id' => $model->id], ['class' => 'btn btn-success']) ?>
+            <?= Html::a('Создать услугу', ['create-item', 'parentId' => $model->id], ['class' => 'btn btn-success']) ?>
         </p>
 
         <? try {?>

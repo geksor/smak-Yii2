@@ -20,28 +20,52 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Создать новый вид', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <? try {?>
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+    <div class="box box-primary">
+        <div class="box-body">
+                <?= GridView::widget([
+                    'dataProvider' => $dataProvider,
+                    'filterModel' => $searchModel,
+                    'columns' => [
+                        ['class' => 'yii\grid\SerialColumn'],
 
-//            'id',
-            'title',
-            'description:ntext',
-            [
-                'attribute' => 'publish',
-                'label' => 'Состояние'
-            ],
-//            'order',
+            //            'id',
+                        'title',
+                        [
+                            'attribute' => 'description',
+                            'format' => 'html',
+                            'value' => function ($data){
+                                return Html::tag('div', $data->description, ['class' => 'textWrap', 'style' => 'max-height: 200px']);
+                            }
+                        ],
+                        [
+                            'attribute' => 'publish',
+                            'label' => 'Публикация',
+                            'filter'=>[0=>"Не опубликованные",1=>"Опубликованные"],
+                            'headerOptions' => ['width' => '170'],
+                            'format' => 'raw',
+                            'value' => function ($data){
+                                if ($data->publish){
+                                    return Html::a('Снять с публикации',
+                                        ['publish', 'id' => $data->id, 'publish' => false],
+                                        ['class' => 'btn btn-danger col-xs-12']);
+                                }
+                                return Html::a('Опубликовать',
+                                    ['publish', 'id' => $data->id, 'publish' => true],
+                                    ['class' => 'btn btn-success col-xs-12']);
+                            }
+                        ],
+            //            'order',
 
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-        "condensed" => true,
-        "hover" => true,
+                        [
+                            'class' => 'yii\grid\ActionColumn',
+                            'headerOptions' => ['width' => 50],
+                        ],
+                    ],
+                    "condensed" => true,
+                    "hover" => true,
 
-        ]); ?>
-    <?}catch (Exception $exception){}?>
+                    ]); ?>
+        </div>
+    </div>
     <?php Pjax::end(); ?>
 </div>

@@ -8,6 +8,7 @@ use yii\helpers\Html;
 
 yiister\adminlte\assets\Asset::register($this);
 
+$this->title = 'Админ панель СМАК'
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -30,6 +31,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style>
+        .textWrap{overflow: auto}
+        .comment-index .table-striped > tbody > tr.newRow{background-color:rgba(255, 26, 0, 0.10)}
+        .comment-index .table-striped > tbody > tr.newRow:hover{background-color:rgba(255, 26, 0, 0.20)}
+        .comment-index .table-striped > tbody > tr.noReadRow{background-color:rgba(255, 193, 7, 0.10)}
+        .comment-index .table-striped > tbody > tr.noReadRow:hover{background-color:rgba(255, 193, 7, 0.20)}
+    </style>
     <?php $this->head() ?>
 </head>
 <!--
@@ -62,9 +70,9 @@ desired effect
         <!-- Logo -->
         <a href="/" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
-            <span class="logo-mini"><b>A</b>LT</span>
+            <span class="logo-mini"><img src="/admin/images/logo.png" alt="SMAK" style="width: 30px"></span>
             <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><b>Admin</b>LTE</span>
+            <span class="logo-lg"><img src="/admin/images/logo.png" alt="SMAK" style="width: 40px; margin-right: 20px"> СМАК</span>
         </a>
 
         <!-- Header Navbar -->
@@ -221,39 +229,35 @@ desired effect
         <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar">
 
-            <!-- Sidebar user panel (optional) -->
-            <div class="user-panel">
-                <div class="pull-left image">
-                    <img src="http://placehold.it/45x45" class="img-circle" alt="User Image">
-                </div>
-                <div class="pull-left info">
-                    <p>Alexander Pierce</p>
-                    <!-- Status -->
-                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-                </div>
-            </div>
-
-            <!-- search form (Optional) -->
-            <form action="#" method="get" class="sidebar-form">
-                <div class="input-group">
-                    <input type="text" name="q" class="form-control" placeholder="Search...">
-                    <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
-              </span>
-                </div>
-            </form>
-            <!-- /.search form -->
-
             <!-- Sidebar Menu -->
             <?try {?>
             <?=
             \yiister\adminlte\widgets\Menu::widget(
                 [
                     "items" => [
-                        ["label" => "Home", "url" => "/admin", "icon" => "home"],
-                        ["label" => "Должности", "url" => ["/position"], "icon" => "user-md"],
-                        ["label" => "Сотрудники", "url" => ["/doctor"], "icon" => "users"],
-                        ["label" => "Виды услуг", "url" => ["/service-type"], "icon" => "heartbeat"],
+                        ["label" => "Главная", "url" => "/admin", "icon" => "home"],
+                        ["label" => "Виды услуг", "url" => ["/service-type/index"], "icon" => "heartbeat"],
+                        [
+                            "label" => "Персонал",
+                            "icon" => "user-md",
+                            "url" => "#",
+                            "items" => [
+                                ["label" => "Должности", "url" => ["/position/index"]],
+                                ["label" => "Сотрудники", "url" => ["/doctor/index"]],
+                                ["label" => "Вакансии", "url" => ["/vacancy/index"]],
+                            ],
+                        ],
+                        [
+                            "label" => "ОМС",
+                            "icon" => "file-text",
+                            "url" => "#",
+                            "items" => [
+                                ["label" => "Ссылки на документы", "url" => ["/oms-link/index"]],
+                                ["label" => "Информация", "url" => ["/oms-info/index"]],
+                            ],
+                        ],
+                        ["label" => "Отзывы", "url" => ["/comment/index"], "icon" => "comments"],
+                        ["label" => "Новоти", "url" => ["/news/index"], "icon" => "newspaper-o"],
                         [
                             "label" => "Widgets",
                             "icon" => "th",
@@ -333,7 +337,7 @@ desired effect
                     [
                         'encodeLabels' => false,
                         'homeLink' => [
-                            'label' => new \rmrevin\yii\fontawesome\component\Icon('home') . ' Home',
+                            'label' => new \rmrevin\yii\fontawesome\component\Icon('home') . ' Главная',
                             'url' => '/',
                         ],
                         'links' => $this->params['breadcrumbs'],

@@ -31,7 +31,7 @@ class ServiceTypeController extends Controller
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['logout', 'index'],
+                        'actions' => ['logout', 'index', 'view', 'create', 'update', 'delete', 'view-item', 'create-item', 'update-item', 'delete-item', 'publish'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -147,10 +147,10 @@ class ServiceTypeController extends Controller
         throw new NotFoundHttpException('The requested page does not exist.');
     }
 
-    public function actionCreateItem($id)
+    public function actionCreateItem($parentId)
     {
         $model = new ServiceItem();
-        $model->type_id = $id;
+        $model->type_id = $parentId;
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view-item', 'id' => $model->id]);
@@ -188,6 +188,20 @@ class ServiceTypeController extends Controller
         $delModel->delete();
 
         return $this->redirect(['view', 'id' => $typeId]);
+    }
+
+    public function actionPublish($id, $publish)
+    {
+        if (Yii::$app->request->isAjax){
+
+            $model = $this->findModel($id);
+
+            $model->publish = (integer) $publish;
+
+            if ($model->save()){
+                return $this->redirect(['index']);
+            }
+        }
     }
 
 }

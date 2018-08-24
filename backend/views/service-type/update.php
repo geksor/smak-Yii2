@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\models\ServiceType */
 
-$this->title = 'Update Service Type: ' . $model->title;
-$this->params['breadcrumbs'][] = ['label' => 'Service Types', 'url' => ['index']];
+$this->title = 'Редактирование вида услуги: ' . $model->title;
+$this->params['breadcrumbs'][] = ['label' => 'Виды услуг', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->title, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Редактирование';
 ?>
 <div class="service-type-update">
 

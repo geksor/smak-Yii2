@@ -21,41 +21,45 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Добавить сотрудника', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?try {?>
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+    <div class="box box-primary">
+        <div class="box-body">
+            <?try {?>
+            <?= GridView::widget([
+                'dataProvider' => $dataProvider,
+                'filterModel' => $searchModel,
+                'columns' => [
+                    ['class' => 'yii\grid\SerialColumn'],
 
-//            'id',
-            'name',
-            [
-                'format' => 'html',
-                'label' => 'Фото',
-                'value' => function ($data)
-                {
-                    return Html::img($data->getThumbPhoto(), ['width' => 100]);
-                },
-            ],
-            [
-                'attribute' => 'positionTitle',
-                'label' => 'Должность',
-                'value' => function ($data)
-                {
-                    return $data->getPositionsTitle();
-                }
-            ],
-//            'info:ntext',
-            'diplom:ntext',
-            //'publish',
-            //'order',
+        //            'id',
+                    'name',
+                    [
+                        'format' => 'html',
+                        'label' => 'Фото',
+                        'value' => function ($data)
+                        {
+                            return Html::img($data->getThumbPhoto(), ['width' => 100]);
+                        },
+                    ],
+                    [
+                        'attribute' => 'positionTitle',
+                        'label' => 'Должность',
+                        'value' => function ($data)
+                        {
+                            return $data->getPositionsTitle();
+                        }
+                    ],
+        //            'info:ntext',
+                    'diplom:ntext',
+                    //'publish',
+                    //'order',
 
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-        "condensed" => true,
-        "hover" => true,
-        ]); ?>
-    <?}catch (Exception $exception){}?>
+                    ['class' => 'yii\grid\ActionColumn'],
+                ],
+                "condensed" => true,
+                "hover" => true,
+                ]); ?>
+        <?}catch (Exception $exception){}?>
+        </div>
+    </div>
     <?php Pjax::end(); ?>
 </div>

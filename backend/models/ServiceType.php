@@ -9,6 +9,7 @@ use Yii;
  *
  * @property int $id
  * @property string $title
+ * @property string $short_description
  * @property string $description
  * @property int $publish
  * @property int $order
@@ -31,9 +32,11 @@ class ServiceType extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['description'], 'string'],
+            [['title', 'short_description', 'description'], 'required'],
+            [['description', 'short_description'], 'string'],
             [['publish', 'order'], 'integer'],
             [['title'], 'string', 'max' => 64],
+            [['short_description'], 'string', 'max' => 130],
         ];
     }
 
@@ -45,6 +48,7 @@ class ServiceType extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'title' => 'Название',
+            'short_description' => 'Краткое описание',
             'description' => 'Описание',
             'publish' => 'Публикация',
             'order' => 'Порядок вывода',
