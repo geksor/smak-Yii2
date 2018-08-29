@@ -33,10 +33,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <![endif]-->
     <style>
         .textWrap{overflow: auto}
-        .comment-index .table-striped > tbody > tr.newRow{background-color:rgba(255, 26, 0, 0.10)}
-        .comment-index .table-striped > tbody > tr.newRow:hover{background-color:rgba(255, 26, 0, 0.20)}
-        .comment-index .table-striped > tbody > tr.noReadRow{background-color:rgba(255, 193, 7, 0.10)}
-        .comment-index .table-striped > tbody > tr.noReadRow:hover{background-color:rgba(255, 193, 7, 0.20)}
+        .markTr .table-striped > tbody > tr.newRow{background-color:rgba(255, 26, 0, 0.10)}
+        .markTr .table-striped > tbody > tr.newRow:hover{background-color:rgba(255, 26, 0, 0.20)}
+        .markTr .table-striped > tbody > tr.noReadRow{background-color:rgba(255, 193, 7, 0.10)}
+        .markTr .table-striped > tbody > tr.noReadRow:hover{background-color:rgba(255, 193, 7, 0.20)}
     </style>
     <?php $this->head() ?>
 </head>
@@ -236,6 +236,7 @@ desired effect
                 [
                     "items" => [
                         ["label" => "Главная", "url" => "/admin", "icon" => "home"],
+                        ["label" => "Заявки на запись", "url" => ["/registration/index"], "icon" => "phone"],
                         ["label" => "Виды услуг", "url" => ["/service-type/index"], "icon" => "heartbeat"],
                         [
                             "label" => "Персонал",
@@ -256,6 +257,7 @@ desired effect
                                 ["label" => "Информация", "url" => ["/oms-info/index"]],
                             ],
                         ],
+                        ["label" => "Памятка пациенту", "url" => ["/reminder/index"], "icon" => "info-circle"],
                         ["label" => "Отзывы", "url" => ["/comment/index"], "icon" => "comments"],
                         ["label" => "Новоти", "url" => ["/news/index"], "icon" => "newspaper-o"],
                         [

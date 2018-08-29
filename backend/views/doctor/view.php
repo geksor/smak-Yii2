@@ -60,7 +60,6 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'publish',
                 'value' => $model->getPublishState(),
             ],
-            'order',
         ],
     ]) ?>
     <?}catch (Exception $exception){}?>

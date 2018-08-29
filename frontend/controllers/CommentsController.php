@@ -24,15 +24,12 @@ class CommentsController extends \yii\web\Controller
         $formModel = new Comment();
 
         if ($formModel->load(Yii::$app->request->post()) && $formModel->validate()) {
-            $formModel->date = time();
             if ($formModel->save()) {
-                Yii::$app->session->setFlash('success', 'Спасибо за ваш отзыв!');
+                Yii::$app->session->setFlash('mess', 'Спасибо за ваш отзыв!');
                 $formModel = new Comment();
 
             } else {
-                Yii::$app->session->setFlash('error', 'Что то пошло не так.');
-                VarDumper::dump($formModel, 10, true);die;
-
+                Yii::$app->session->setFlash('mess', 'Что то пошло не так.');
             }
         }
 

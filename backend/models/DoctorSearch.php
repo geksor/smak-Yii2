@@ -69,6 +69,8 @@ class DoctorSearch extends Doctor
             ->andFilterWhere(['like', 'info', $this->info])
             ->andFilterWhere(['like', 'diplom', $this->diplom]);
 
+        $query->orderBy(['order' => SORT_ASC]);
+
         return $dataProvider;
     }
 }

@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 
+use backend\models\Registration;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
@@ -57,7 +58,21 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $consultFormModel = new Registration();
+
+        if ($consultFormModel->load(Yii::$app->request->post()) && $consultFormModel->validate()) {
+            if ($consultFormModel->save()) {
+                Yii::$app->session->setFlash('mess', 'Ваша заявка принята. С Вами свяжутся в ближайшее время.');
+                $consultFormModel = new Registration();
+
+            } else {
+                Yii::$app->session->setFlash('mess', 'Что то пошло не так.');
+            }
+        }
+
+        return $this->render('index', [
+            'consultFormModel' => $consultFormModel,
+        ]);
     }
 
 }

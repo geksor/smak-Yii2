@@ -69,6 +69,8 @@ class ServiceItemSearch extends ServiceItem
 
         $query->andFilterWhere(['like', 'title', $this->title]);
 
+        $query->orderBy(['order' => SORT_ASC]);
+
         return $dataProvider;
     }
 }

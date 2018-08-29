@@ -50,8 +50,52 @@ $this->params['breadcrumbs'][] = $this->title;
                     ],
         //            'info:ntext',
                     'diplom:ntext',
-                    //'publish',
-                    //'order',
+                    [
+                        'attribute' => 'publish',
+                        'label' => 'Публикация',
+                        'filter'=>[0=>"Не опубликованные",1=>"Опубликованные"],
+                        'headerOptions' => ['width' => '170'],
+                        'format' => 'raw',
+                        'value' => function ($data){
+                            if ($data->publish){
+                                return Html::a('Снять с публикации',
+                                    ['publish', 'id' => $data->id, 'publish' => false],
+                                    ['class' => 'btn btn-default col-xs-12']);
+                            }
+                            return Html::a('Опубликовать',
+                                ['publish', 'id' => $data->id, 'publish' => true],
+                                ['class' => 'btn btn-success col-xs-12']);
+                        }
+                    ],
+                    [
+                        'attribute' => 'order',
+                        'format' => 'raw',
+                        'headerOptions' => ['width' => 50],
+                        'value' => function ($data){
+                            $intDown = $data->order > 1 ? 1 : 0;
+                            $up = Html::a(
+                                '&#9650;',
+                                [
+                                    'order',
+                                    'id' => $data->id,
+                                    'order' => $data->order - $intDown,
+                                    'up' => true,
+                                ],
+                                ['class'=>'btn btn-default']);
+
+                            $down = Html::a(
+                                '&#9660;',
+                                [
+                                    'order',
+                                    'id' => $data->id,
+                                    'order' => $data->order + 1,
+                                    'up' => false,
+                                ],
+                                ['class'=>'btn btn-default']);
+
+                            return $up.$down;
+                        }
+                    ],
 
                     ['class' => 'yii\grid\ActionColumn'],
                 ],

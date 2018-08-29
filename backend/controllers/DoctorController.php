@@ -34,7 +34,19 @@ class DoctorController extends Controller
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['logout', 'index', 'view', 'create', 'update', 'delete', 'set-position', 'set-photo', 'set-table'],
+                        'actions' => [
+                            'logout',
+                            'index',
+                            'view',
+                            'create',
+                            'update',
+                            'delete',
+                            'set-position',
+                            'set-photo',
+                            'set-table',
+                            'publish',
+                            'order',
+                        ],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -85,6 +97,12 @@ class DoctorController extends Controller
     public function actionCreate()
     {
         $model = new Doctor();
+
+        $maxOrder = Doctor::find()->max('`order`');
+
+        if ($maxOrder){
+            $model->order = ++$maxOrder;
+        }
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -245,5 +263,36 @@ class DoctorController extends Controller
                 return $this->redirect(['index']);
             }
         }
+        return false;
     }
+
+    public function actionOrder($id, $order, $up)
+    {
+        if (Yii::$app->request->isAjax){
+            $maxOrder = Doctor::find()->max('`order`');
+
+            if ($order <= $maxOrder){
+
+                $model = $this->findModel($id);
+
+                $model->order = (integer) $order;
+
+                while (!$modelReplace = Doctor::find()->where(['order' => $order])->one()){
+                    $up ? $order-- : $order++;
+                }
+
+                $modelReplace->order = $up ? ++$modelReplace->order : --$modelReplace->order;
+                if ($modelReplace->order === $model->order){
+                    $modelReplace->order = $up ? ++$modelReplace->order : --$modelReplace->order;
+                }
+
+                if ($model->save() && $modelReplace->save()){
+                    return $this->redirect(['index']);
+                }
+            }
+            return $this->redirect(['index']);
+        }
+        return false;
+    }
+
 }

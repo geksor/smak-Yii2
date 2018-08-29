@@ -31,7 +31,7 @@ class OmsLinkController extends Controller
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['logout', 'index', 'view', 'create', 'update', 'delete', 'upload-document', 'publish'],
+                        'actions' => ['logout', 'index', 'view', 'create', 'update', 'delete', 'upload-document', 'publish', 'order'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -82,6 +82,12 @@ class OmsLinkController extends Controller
     public function actionCreate()
     {
         $model = new OmsLink();
+
+        $maxOrder = OmsLink::find()->max('`order`');
+
+        if ($maxOrder){
+            $model->order = ++$maxOrder;
+        }
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -175,6 +181,36 @@ class OmsLinkController extends Controller
                 return $this->redirect(['index']);
             }
         }
+        return false;
+    }
+
+    public function actionOrder($id, $order, $up)
+    {
+        if (Yii::$app->request->isAjax){
+            $maxOrder = OmsLink::find()->max('`order`');
+
+            if ($order <= $maxOrder){
+
+                $model = $this->findModel($id);
+
+                $model->order = (integer) $order;
+
+                while (!$modelReplace = OmsLink::find()->where(['order' => $order])->one()){
+                    $up ? $order-- : $order++;
+                }
+
+                $modelReplace->order = $up ? ++$modelReplace->order : --$modelReplace->order;
+                if ($modelReplace->order === $model->order){
+                    $modelReplace->order = $up ? ++$modelReplace->order : --$modelReplace->order;
+                }
+
+                if ($model->save() && $modelReplace->save()){
+                    return $this->redirect(['index']);
+                }
+            }
+            return $this->redirect(['index']);
+        }
+        return false;
     }
 
 }

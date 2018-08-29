@@ -37,7 +37,6 @@ $this->params['breadcrumbs'][] = $this->title;
                     return Html::tag('div', $data->text, ['class' => 'textWrap', 'style' => 'max-height: 400px']);
                 }
             ],
-            'order',
             [
                 'attribute' => 'publish',
                 'label' => 'Состояние',

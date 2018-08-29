@@ -32,7 +32,34 @@ $this->params['breadcrumbs'][] = $this->title;
             'day_count',
             'price',
             //'publish',
-            //'order',
+            [
+                'attribute' => 'order',
+                'format' => 'raw',
+                'value' => function ($data){
+                    $intDown = $data->order > 1 ? 1 : 0;
+                    $up = Html::a(
+                        '&#9650;',
+                        [
+                            '/service-type/order',
+                            'id' => $data->id,
+                            'order' => $data->order - $intDown,
+                            'up' => true,
+                        ],
+                        ['class'=>'btn btn-default']);
+
+                    $down = Html::a(
+                        '&#9660;',
+                        [
+                            '/service-type/order',
+                            'id' => $data->id,
+                            'order' => $data->order + 1,
+                            'up' => false,
+                        ],
+                        ['class'=>'btn btn-default']);
+
+                    return $up.$down;
+                }
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

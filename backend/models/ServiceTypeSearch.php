@@ -41,7 +41,7 @@ class ServiceTypeSearch extends ServiceType
      */
     public function search($params)
     {
-        $query = ServiceType::find();
+        $query = ServiceType::find()->with('serviceItems');
 
         // add conditions that should always apply here
 
@@ -66,6 +66,8 @@ class ServiceTypeSearch extends ServiceType
 
         $query->andFilterWhere(['like', 'title', $this->title])
             ->andFilterWhere(['like', 'description', $this->description]);
+
+        $query->orderBy(['order' => SORT_ASC]);
 
         return $dataProvider;
     }

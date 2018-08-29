@@ -247,3 +247,6 @@ $('#doctor_select').on('change', function () {
     $($('#doctor_select').val()).addClass('active')
 });
 
+$('.phoneMask').mask('+7 (999)-999-99-99');
+$('.insurance').mask('9999 9999 9999 9999',  {placeholder: "0000 0000 0000 0000" });
+

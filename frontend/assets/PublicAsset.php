@@ -16,6 +16,7 @@ class PublicAsset extends AssetBundle
     ];
     public $js = [
         'public/js/vendor/jquery-ui.min.js',
+        'public/js/vendor/jquery.maskedinput.min.js',
         'public/js/vendor/slick.min.js',
         'public/js/vendor/slideout.js',
         'public/js/agreement.js',

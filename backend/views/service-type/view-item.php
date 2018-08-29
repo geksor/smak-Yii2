@@ -39,7 +39,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'label' => 'Состояние',
                 'value' => $model->getPublishState(),
             ],
-            'order',
+//            'order',
         ],
     ]) ?>
     <?}catch (Exception $exception){}?>

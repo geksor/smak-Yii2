@@ -22,7 +22,8 @@
         "bupy7/yii2-widget-cropbox": "*",
         "yiisoft/yii2-imagine": "^2.1",
         "kartik-v/yii2-widget-datetimepicker": "*",
-        "mihaildev/yii2-ckeditor": "*"
+        "mihaildev/yii2-ckeditor": "*",
+        "zxbodya/yii2-gallery-manager": "*@dev"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

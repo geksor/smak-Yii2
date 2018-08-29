@@ -10,7 +10,7 @@ use yii\widgets\Pjax;
 $this->title = 'Отзывы';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="comment-index">
+<div class="comment-index markTr">
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php Pjax::begin(); ?>

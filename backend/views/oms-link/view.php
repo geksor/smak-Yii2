@@ -41,7 +41,6 @@ $this->params['breadcrumbs'][] = $this->title;
                     return 'Не загружен';
                 },
             ],
-            'order',
             'publish',
         ],
     ]) ?>

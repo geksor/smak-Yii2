@@ -1210,7 +1210,7 @@ html {
 .justify-content-end {
   justify-content: flex-end !important; }
 
-.justify-content-center, .def_button, .slider__moreButton, .slider__signUpButton, .priceLink, .rulesLink, .consultForm__submit, .commentForm__submit, .payService__linksBlock, .omsDocLink, .tableDoctorWrap .doctor__selectWrap:after, .pagination ul li a, .pagination ul li span {
+.justify-content-center, .def_button, .messBlock__button, .slider__moreButton, .slider__signUpButton, .priceLink, .rulesLink, .consultForm__submit, .commentForm__submit, .payService__linksBlock, .omsDocLink, .tableDoctorWrap .doctor__selectWrap:after, .pagination ul li a, .pagination ul li span {
   justify-content: center !important; }
 
 .justify-content-between {
@@ -1225,7 +1225,7 @@ html {
 .align-items-end {
   align-items: flex-end !important; }
 
-.align-items-center, .def_button, .slider__moreButton, .slider__signUpButton, .priceLink, .rulesLink, .consultForm__submit, .commentForm__submit, .payService__linksBlock, .omsDocLink, .tableDoctorWrap .doctor__selectWrap:after, .pagination ul li a, .pagination ul li span {
+.align-items-center, .def_button, .messBlock__button, .slider__moreButton, .slider__signUpButton, .priceLink, .rulesLink, .consultForm__submit, .commentForm__submit, .payService__linksBlock, .omsDocLink, .tableDoctorWrap .doctor__selectWrap:after, .pagination ul li a, .pagination ul li span {
   align-items: center !important; }
 
 .align-items-baseline {
@@ -2722,7 +2722,7 @@ html {
 @font-face {
   font-family: Montserrat-Regular;
   src: url(../css/fonts/Montserrat-Regular.ttf); }
-.f_Montserrat-Regular, body, .def_desc, .def_button, .slider__moreButton, .slider__signUpButton, .priceLink, .rulesLink, .consultForm__submit, .commentForm__submit, .consultForm__input, .commentForm__input, .commentForm__textarea, .toggleBlock__toggle_text h2, .toggleBlock__toggle_text h3, .toggleBlock__toggle_text h4, .toggleBlock__toggle_text p, .tableDoctorWrap, .newsShortText, .newsReadMore, .newsFullText, .commentText, .vacansyText, .aboutText {
+.f_Montserrat-Regular, body, .def_desc, .def_button, .messBlock__button, .slider__moreButton, .slider__signUpButton, .priceLink, .rulesLink, .consultForm__submit, .commentForm__submit, .consultForm__input, .commentForm__input, .commentForm__textarea, .toggleBlock__toggle_text h2, .toggleBlock__toggle_text h3, .toggleBlock__toggle_text h4, .toggleBlock__toggle_text p, .tableDoctorWrap, .newsShortText, .newsReadMore, .newsFullText, .commentText, .vacansyText, .aboutText {
   font-family: Montserrat-Regular, sans-serif; }
 
 @font-face {
@@ -2731,10 +2731,10 @@ html {
 .f_Montserrat-Italic {
   font-family: Montserrat-Italic, sans-serif; }
 
-.fs_12, .personalText .job, .newsPublishDate, .commentCreateDate, .vacansyCreateDate {
+.fs_12, .consultForm__form .form-group .help-block, .commentForm__form .form-group .help-block, .personalText .job, .newsPublishDate, .commentCreateDate, .vacansyCreateDate {
   font-size: 12px; }
 
-.fs_14, .def_text, .aboutBlock__text, .newsText, .service_slide .slideText, .def_desc, .def_button, .slider__moreButton, .slider__signUpButton, .priceLink, .rulesLink, .consultForm__submit, .commentForm__submit, .newsBlock__allNewsLink, .contentBlock__title, .contentBlock__list, .copyright, .weLinkWrap, .footer__menu, .tableHead, .tableRow, .toggleBlock__toggle_text h2, .toggleBlock__toggle_text h3, .toggleBlock__toggle_text h4, .toggleBlock__toggle_text p, .omsDocLink, .tableDoctorWrap, .tableDoctorWrap .doctor__selectWrap .select option, .newsShortText, .newsReadMore, .newsFullText, .pagination ul, .commentText, .vacansyText, .aboutText {
+.fs_14, .def_text, .aboutBlock__text, .newsText, .service_slide .slideText, .def_desc, .def_button, .messBlock__button, .slider__moreButton, .slider__signUpButton, .priceLink, .rulesLink, .consultForm__submit, .commentForm__submit, .newsBlock__allNewsLink, .contentBlock__title, .contentBlock__list, .copyright, .weLinkWrap, .footer__menu, .tableHead, .tableRow, .toggleBlock__toggle_text h2, .toggleBlock__toggle_text h3, .toggleBlock__toggle_text h4, .toggleBlock__toggle_text p, .omsDocLink, .tableDoctorWrap, .tableDoctorWrap .doctor__selectWrap .select option, .newsShortText, .newsReadMore, .newsFullText, .pagination ul, .commentText, .vacansyText, .aboutText {
   font-size: 14px; }
 
 .fs_16, .left_menu, .header, .newsTitle, .service_slide .slideNumber, .consultForm__input, .commentForm__input, .commentForm__textarea, .contactRow__text, .gvnpLink, .tableDoctorWrap-sm, .tableDoctorWrap label, .tableDoctorWrap .doctor__selectWrap .select, .tableDoctorWrap .doctorTiming .nameTitle, .tableDoctorWrap .doctorTiming .tableMobile__time, .personalText .name, .commentTitle, .vacansyTitle, .aboutContactBody {
@@ -2773,7 +2773,7 @@ html {
 .fls_06, .personalText .job, .newsPublishDate, .commentCreateDate, .vacansyCreateDate {
   letter-spacing: .6px; }
 
-.fls_07, .def_desc, .def_button, .slider__moreButton, .slider__signUpButton, .priceLink, .rulesLink, .consultForm__submit, .commentForm__submit, .newsBlock__allNewsLink, .contentBlock__title, .contentBlock__list, .copyright, .weLinkWrap, .footer__menu, .tableHead, .tableRow, .toggleBlock__toggle_text h2, .toggleBlock__toggle_text h3, .toggleBlock__toggle_text h4, .toggleBlock__toggle_text p, .omsDocLink, .newsShortText, .newsReadMore, .newsFullText, .pagination ul, .commentText, .vacansyText, .aboutText {
+.fls_07, .def_desc, .def_button, .messBlock__button, .slider__moreButton, .slider__signUpButton, .priceLink, .rulesLink, .consultForm__submit, .commentForm__submit, .newsBlock__allNewsLink, .contentBlock__title, .contentBlock__list, .copyright, .weLinkWrap, .footer__menu, .tableHead, .tableRow, .toggleBlock__toggle_text h2, .toggleBlock__toggle_text h3, .toggleBlock__toggle_text h4, .toggleBlock__toggle_text p, .omsDocLink, .newsShortText, .newsReadMore, .newsFullText, .pagination ul, .commentText, .vacansyText, .aboutText {
   letter-spacing: .7px; }
 
 .fls_08, .header, .service_slide .slideNumber, .consultForm__input, .commentForm__input, .commentForm__textarea, .contactRow__text, .gvnpLink, .tableDoctorWrap-sm, .tableDoctorWrap, .personalText .name, .newsTitle, .commentTitle, .vacansyTitle, .aboutContactBody {
@@ -2794,22 +2794,22 @@ html {
 .flh_24, .def_text, .aboutBlock__text, .newsText, .service_slide .slideText, .contentBlock__list, .copyright, .newsShortText, .newsFullText, .commentTitle, .vacansyTitle, .commentCreateDate, .vacansyCreateDate, .commentText, .vacansyText, .aboutText {
   line-height: 24px; }
 
-.text-align_center, .def_desc, .newsBlock__allNewWrapBottom, .consultForm__title, .commentForm__title, .consultForm__input, .commentForm__input, .commentForm__textarea, .contactRow .ico, .dayCount, .servPrice, .gvnpLink, .omsDocLink, .personalText {
+.text-align_center, .def_desc, .newsBlock__allNewWrapBottom, .consultForm__form .form-group .help-block, .commentForm__form .form-group .help-block, .consultForm__title, .commentForm__title, .consultForm__input, .commentForm__input, .commentForm__textarea, .contactRow .ico, .dayCount, .servPrice, .gvnpLink, .omsDocLink, .personalText {
   text-align: center; }
 
 .text-transform_uppercase, .left_menu, .newsBlock__allNewsLink, .copyright {
   text-transform: uppercase; }
 
-.flex, .page, .def_button, .slider__moreButton, .slider__signUpButton, .priceLink, .rulesLink, .consultForm__submit, .commentForm__submit, .service_slide, .payService__linksBlock, .omsDocLink, .tableDoctorWrap .doctor__selectWrap:after, .pagination ul, .pagination ul li a, .pagination ul li span {
+.flex, .page, .def_button, .messBlock__button, .slider__moreButton, .slider__signUpButton, .priceLink, .rulesLink, .consultForm__submit, .commentForm__submit, .service_slide, .payService__linksBlock, .omsDocLink, .tableDoctorWrap .doctor__selectWrap:after, .pagination ul, .pagination ul li a, .pagination ul li span {
   display: flex; }
 
 .flex_col, .page {
   flex-direction: column; }
 
-.relative, .main, .sliderLine, .contentBlock__list li, .tableDoctorWrap .doctor__selectWrap, .tableDoctorWrap .doctor__selectWrap .select, .newsPageImgWrap, .pagination ul li {
+.relative, .main, .sliderLine, .contentBlock__list li, .consultForm__form .form-group, .commentForm__form .form-group, .tableDoctorWrap .doctor__selectWrap, .tableDoctorWrap .doctor__selectWrap .select, .newsPageImgWrap, .pagination ul li {
   position: relative; }
 
-.absolute, .absolute_100prc, .newsPageImgWrap img, .pagination ul li a, .pagination ul li span, .header__mainMenu li ul, .slider__navBlock, .contentBlock__list li:before, .bgndImageBlock::before, .contactLine .map, .footer__leftBlock, .tableDoctorWrap .doctor__selectWrap:after {
+.absolute, .absolute_100prc, .newsPageImgWrap img, .pagination ul li a, .pagination ul li span, .header__mainMenu li ul, .slider__navBlock, .contentBlock__list li:before, .bgndImageBlock::before, .consultForm__form .form-group .help-block, .commentForm__form .form-group .help-block, .contactLine .map, .footer__leftBlock, .tableDoctorWrap .doctor__selectWrap:after {
   position: absolute; }
 
 .absolute_100prc, .newsPageImgWrap img, .pagination ul li a, .pagination ul li span {
@@ -2928,10 +2928,10 @@ body {
 .transitionColorBgndColor {
   transition: color .3s ease, background-color .3s ease; }
 
-.transitionAll, .def_button, .slider__moreButton, .slider__signUpButton, .priceLink, .rulesLink, .consultForm__submit, .commentForm__submit, .slideNavBtn, .slider__navBtn {
+.transitionAll, .def_button, .messBlock__button, .slider__moreButton, .slider__signUpButton, .priceLink, .rulesLink, .consultForm__submit, .commentForm__submit, .slideNavBtn, .slider__navBtn {
   transition: .3s ease; }
 
-.def_button, .slider__moreButton, .slider__signUpButton, .priceLink, .rulesLink, .consultForm__submit, .commentForm__submit {
+.def_button, .messBlock__button, .slider__moreButton, .slider__signUpButton, .priceLink, .rulesLink, .consultForm__submit, .commentForm__submit {
   min-height: 44px;
   width: 100%;
   border-radius: 22px;
@@ -2980,6 +2980,14 @@ body {
 
 svg {
   max-width: 100%; }
+
+.messContent {
+  width: 107%;
+  height: 100%; }
+
+.messBlock__button:hover {
+  color: #ffffff;
+  background-color: #1e1e1e; }
 
 .header {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#3b98fa+0,51d379+100 */
@@ -3374,6 +3382,10 @@ svg {
 
 .consultForm__form, .commentForm__form {
   padding-bottom: 78px; }
+  .consultForm__form .form-group .help-block, .commentForm__form .form-group .help-block {
+    bottom: 10px;
+    width: 100%;
+    color: #953b39; }
 
 .consultForm__title, .commentForm__title {
   letter-spacing: 1.8px;

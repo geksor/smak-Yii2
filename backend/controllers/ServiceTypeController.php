@@ -8,6 +8,7 @@ use Yii;
 use backend\models\ServiceType;
 use backend\models\ServiceTypeSearch;
 use yii\filters\AccessControl;
+use yii\helpers\VarDumper;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -31,7 +32,22 @@ class ServiceTypeController extends Controller
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['logout', 'index', 'view', 'create', 'update', 'delete', 'view-item', 'create-item', 'update-item', 'delete-item', 'publish'],
+                        'actions' => [
+                            'logout',
+                            'index',
+                            'view',
+                            'create',
+                            'update',
+                            'delete',
+                            'view-item',
+                            'create-item',
+                            'update-item',
+                            'delete-item',
+                            'publish',
+                            'order',
+                            'order-item',
+                            'publish-item',
+                        ],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -87,6 +103,12 @@ class ServiceTypeController extends Controller
     public function actionCreate()
     {
         $model = new ServiceType();
+
+        $maxOrder = ServiceType::find()->max('`order`');
+
+        if ($maxOrder){
+            $model->order = ++$maxOrder;
+        }
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -147,10 +169,16 @@ class ServiceTypeController extends Controller
         throw new NotFoundHttpException('The requested page does not exist.');
     }
 
-    public function actionCreateItem($parentId)
+    public function actionCreateItem($id)
     {
         $model = new ServiceItem();
-        $model->type_id = $parentId;
+        $model->type_id = $id;
+
+        $maxOrder = ServiceItem::find()->max('`order`');
+
+        if ($maxOrder){
+            $model->order = ++$maxOrder;
+        }
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view-item', 'id' => $model->id]);
@@ -173,7 +201,7 @@ class ServiceTypeController extends Controller
         $model = ServiceItem::findOne($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view-item', 'id' => $model->id]);
+            return $this->redirect(['view-item', 'id' => $id]);
         }
 
         return $this->render('update-item', [
@@ -202,6 +230,80 @@ class ServiceTypeController extends Controller
                 return $this->redirect(['index']);
             }
         }
+    }
+
+    public function actionOrder($id, $order, $up)
+    {
+        if (Yii::$app->request->isAjax){
+
+            $maxOrder = ServiceType::find()->max('`order`');
+
+            if ($order <= $maxOrder){
+
+                $model = $this->findModel($id);
+
+                $model->order = (integer) $order;
+
+                while (!$modelReplace = ServiceType::find()->where(['order' => $order])->one()){
+                    $up ? $order-- : $order++;
+                }
+
+                $modelReplace->order = $up ? ++$modelReplace->order : --$modelReplace->order;
+                if ($modelReplace->order === $model->order){
+                    $modelReplace->order = $up ? ++$modelReplace->order : --$modelReplace->order;
+                }
+
+                if ($model->save() && $modelReplace->save()){
+                    return $this->redirect(['index']);
+                }
+            }
+            return $this->redirect(['index']);
+        }
+        return false;
+    }
+
+    public function actionPublishItem($id, $publish)
+    {
+        if (Yii::$app->request->isAjax){
+
+            $model = ServiceItem::findOne($id);
+
+            $model->publish = (integer) $publish;
+
+            if ($model->save()){
+                return $this->redirect(['view', 'id' => $model->type_id]);
+            }
+        }
+    }
+
+    public function actionOrderItem($id, $order, $up)
+    {
+        if (Yii::$app->request->isAjax){
+
+            $maxOrder = ServiceItem::find()->max('`order`');
+
+            $model = ServiceItem::findOne($id);
+
+            if ($order <= $maxOrder){
+
+                $model->order = (integer) $order;
+
+                while (!$modelReplace = ServiceItem::find()->where(['order' => $order])->one()){
+                    $up ? $order-- : $order++;
+                }
+
+                $modelReplace->order = $up ? ++$modelReplace->order : --$modelReplace->order;
+                if ($modelReplace->order === $model->order){
+                    $modelReplace->order = $up ? ++$modelReplace->order : --$modelReplace->order;
+                }
+
+                if ($model->save() && $modelReplace->save()){
+                    return $this->redirect(['view', 'id' => $model->type_id]);
+                }
+            }
+            return $this->redirect(['view', 'id' => $model->type_id]);
+        }
+        return false;
     }
 
 }

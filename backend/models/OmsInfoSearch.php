@@ -67,6 +67,8 @@ class OmsInfoSearch extends OmsInfo
         $query->andFilterWhere(['like', 'title', $this->title])
             ->andFilterWhere(['like', 'text', $this->text]);
 
+        $query->orderBy(['order' => SORT_ASC]);
+
         return $dataProvider;
     }
 }

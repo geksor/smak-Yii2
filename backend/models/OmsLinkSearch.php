@@ -67,6 +67,8 @@ class OmsLinkSearch extends OmsLink
         $query->andFilterWhere(['like', 'title', $this->title])
             ->andFilterWhere(['like', 'link', $this->link]);
 
+        $query->orderBy(['order' => SORT_ASC]);
+
         return $dataProvider;
     }
 }

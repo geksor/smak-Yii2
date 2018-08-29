@@ -353,6 +353,17 @@ body{
 svg{
   max-width: 100%;
 }
+.messContent{
+  width: 107%;
+  height: 100%;
+}
+.messBlock__button{
+  @extend .def_button;
+  &:hover{
+    color: #ffffff;
+    background-color: #1e1e1e;
+  }
+}
 
 //--siteStyle--//
 .header{
@@ -832,6 +843,15 @@ svg{
 }
 .consultForm__form{
   padding-bottom: 78px;
+  .form-group{
+    @extend .relative;
+    .help-block{
+      @extend .absolute,.fs_12,.text-align_center;
+      bottom: 10px;
+      width: 100%;
+      color: #953b39;
+    }
+  }
 }
 .consultForm__title{
   @extend .f_Montserrat-Medium,.fs_24,.fc_fff,.text-align_center;

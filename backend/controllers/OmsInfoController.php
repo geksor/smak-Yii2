@@ -29,7 +29,7 @@ class OmsInfoController extends Controller
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['logout', 'index', 'view', 'create', 'update', 'delete', 'publish'],
+                        'actions' => ['logout', 'index', 'view', 'create', 'update', 'delete', 'publish', 'order'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -80,6 +80,12 @@ class OmsInfoController extends Controller
     public function actionCreate()
     {
         $model = new OmsInfo();
+
+        $maxOrder = OmsInfo::find()->max('`order`');
+
+        if ($maxOrder){
+            $model->order = ++$maxOrder;
+        }
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -152,5 +158,35 @@ class OmsInfoController extends Controller
                 return $this->redirect(['index']);
             }
         }
+        return false;
+    }
+
+    public function actionOrder($id, $order, $up)
+    {
+        if (Yii::$app->request->isAjax){
+            $maxOrder = OmsInfo::find()->max('`order`');
+
+            if ($order <= $maxOrder){
+
+                $model = $this->findModel($id);
+
+                $model->order = (integer) $order;
+
+                while (!$modelReplace = OmsInfo::find()->where(['order' => $order])->one()){
+                    $up ? $order-- : $order++;
+                }
+
+                $modelReplace->order = $up ? ++$modelReplace->order : --$modelReplace->order;
+                if ($modelReplace->order === $model->order){
+                    $modelReplace->order = $up ? ++$modelReplace->order : --$modelReplace->order;
+                }
+
+                if ($model->save() && $modelReplace->save()){
+                    return $this->redirect(['index']);
+                }
+            }
+            return $this->redirect(['index']);
+        }
+        return false;
     }
 }

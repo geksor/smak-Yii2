@@ -2,6 +2,10 @@
 
 /* @var $this yii\web\View */
 
+use yii\widgets\ActiveForm;
+use yii\helpers\Html;
+
+/* @var $consultFormModel \backend\models\Registration */
 
 
 $this->title = 'Хирургический центр СМАК - Главная';
@@ -165,23 +169,43 @@ $this->title = 'Хирургический центр СМАК - Главная'
             </div>
             <div class="col-12 col-lg-7 col-xl-6">
                 <h2 class="consultForm__title">Запись на консультацию к врачу</h2>
-                <form class="consultForm__form row">
+
+                <?php $form = ActiveForm::begin(['options' => ['class' => 'consultForm__form row']]); ?>
+
                     <div class="col-12 col-sm-6">
-                        <input type="text" class="consultForm__input" placeholder="Ваше имя">
+                        <?= $form->field($consultFormModel, 'name')->textInput([
+                            'class' => 'consultForm__input',
+                            'placeholder' => 'Ваше имя'
+                        ])->label(false) ?>
                     </div>
                     <div class="col-12 col-sm-6">
-                        <input type="email" class="consultForm__input" placeholder="E-mail адрес">
+                        <?= $form->field($consultFormModel, 'email')->textInput([
+                            'type' => 'email',
+                            'class' => 'consultForm__input',
+                            'placeholder' => 'E-mail адрес'
+                        ])->label(false) ?>
                     </div>
                     <div class="col-12 col-sm-6">
-                        <input type="tel" class="consultForm__input" placeholder="Номер телефона">
+                        <?= $form->field($consultFormModel, 'tel')->textInput([
+                            'type' => 'tel',
+                            'maxlength' => true,
+                            'class' => 'consultForm__input phoneMask',
+                            'placeholder' => 'Номер телефона'
+                        ])->label(false) ?>
                     </div>
                     <div class="col-12 col-sm-6">
-                        <input type="number" class="consultForm__input" placeholder="Номер полиса">
+                        <?= $form->field($consultFormModel, 'insurance')->textInput([
+                            'type' => 'text',
+                            'maxlength' => true,
+                            'class' => 'consultForm__input insurance',
+                            'placeholder' => 'Номер полиса'
+                        ])->label(false) ?>
                     </div>
                     <div class="col-12">
-                        <button class="consultForm__submit">Записаться</button>
+                        <?= Html::submitButton('Записаться', ['class' => 'consultForm__submit']) ?>
                     </div>
-                </form>
+
+                <?php ActiveForm::end(); ?>
             </div>
         </div>
     </div>

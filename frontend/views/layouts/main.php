@@ -27,7 +27,9 @@ PublicAsset::register($this);
     <div class="left_menu">
     </div>
 </div>
-<div id="panel" class="wrapper panel slideout-panel slideout-panel-left page">
+<div id="panel" class="wrapper panel slideout-panel slideout-panel-left page
+    <?= Yii::$app->session->hasFlash('mess')? 'panel-open' : '' ?>">
+
     <header class="header<?= Yii::$app->request->url == Yii::$app->homeUrl ? '' : ' otherPage' ?>">
         <div class="container">
             <div class="row align-items-center justify-content-between">
@@ -50,7 +52,7 @@ PublicAsset::register($this);
                             [
                                 'items' => [
                                     ['label' => 'Платные услуги', 'url' => ['/pay-service/index'], 'options' => ['class' => 'col-auto']],
-                                    ['label' => 'Памятка пациенту', 'url' => ['reminder'], 'options' => ['class' => 'col-auto']],
+                                    ['label' => 'Памятка пациенту', 'url' => ['/reminder/index'], 'options' => ['class' => 'col-auto']],
                                     [
                                         'label' => 'ОМС',
                                         'url' => ['/oms/index'],
@@ -160,6 +162,17 @@ PublicAsset::register($this);
             </div>
         </div>
     </footer>
+</div>
+
+<div id="mess_block" style="<?= Yii::$app->session->hasFlash('mess')? 'display: block' : 'display: none' ?>">
+    <div class="messContent row align-items-center justify-content-center">
+        <div class="col-12">
+            <h2 id="mess" class="mess"><?= Yii::$app->session->getFlash('mess') ?></h2>
+        </div>
+        <div class="col-6">
+            <button id="ok" class="messBlock__button">OK</button>
+        </div>
+    </div>
 </div>
 
 <button id="buttonUp" class="buttonUp active">

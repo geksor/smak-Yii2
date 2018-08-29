@@ -51,7 +51,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     return 'Не опубликовано';
                 }
             ],
-            'order',
+//            'order',
         ],
     ]) ?>
     <?}catch (Exception $exception){}?>
@@ -63,7 +63,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
         <p>
-            <?= Html::a('Создать услугу', ['create-item', 'parentId' => $model->id], ['class' => 'btn btn-success']) ?>
+            <?= Html::a('Создать услугу', ['create-item', 'id' => $model->id], ['class' => 'btn btn-success']) ?>
         </p>
 
         <? try {?>
@@ -79,9 +79,50 @@ $this->params['breadcrumbs'][] = $this->title;
                     'price',
                     [
                         'attribute' => 'publish',
-                        'label' => 'Состояние',
+                        'label' => 'Публикация',
+                        'filter'=>[0=>"Не опубликованные",1=>"Опубликованные"],
+                        'headerOptions' => ['width' => '170'],
+                        'format' => 'raw',
+                        'value' => function ($data){
+                            if ($data->publish){
+                                return Html::a('Снять с публикации',
+                                    ['publish-item', 'id' => $data->id, 'publish' => false],
+                                    ['class' => 'btn btn-default col-xs-12']);
+                            }
+                            return Html::a('Опубликовать',
+                                ['publish-item', 'id' => $data->id, 'publish' => true],
+                                ['class' => 'btn btn-success col-xs-12']);
+                        }
                     ],
-//            'order',
+                    [
+                        'attribute' => 'order',
+                        'format' => 'raw',
+                        'headerOptions' => ['width' => 50],
+                        'value' => function ($data){
+                            $intDown = $data->order > 1 ? 1 : 0;
+                            $up = Html::a(
+                                '&#9650;',
+                                [
+                                    '/service-type/order-item',
+                                    'id' => $data->id,
+                                    'order' => $data->order - $intDown,
+                                    'up' => true,
+                                ],
+                                ['class'=>'btn btn-default']);
+
+                            $down = Html::a(
+                                '&#9660;',
+                                [
+                                    '/service-type/order-item',
+                                    'id' => $data->id,
+                                    'order' => $data->order + 1,
+                                    'up' => false,
+                                ],
+                                ['class'=>'btn btn-default']);
+
+                            return $up.$down;
+                        }
+                    ],
 
                     [
                         'class' => 'yii\grid\ActionColumn',
