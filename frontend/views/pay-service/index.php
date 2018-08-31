@@ -2,7 +2,7 @@
 /* @var $this yii\web\View */
 /* @var $models \backend\models\ServiceType */
 
-$this->title = 'Платные услуги';
+$this->title = Yii::$app->params['PayServicePage']['pageTitle'];
 ?>
 <div class="container">
     <h1 class="pageTitle"><?= $this->title ?></h1>
@@ -43,44 +43,22 @@ $this->title = 'Платные услуги';
     <div class="payServiceLine servicePayLine_page">
         <div class="row justify-content-center justify-content-lg-between">
             <div class="col-12 col-lg-7 col-xl-8">
-                <div class="payService__contentBlock">
-                    <h2 class="payService__title">Платные сервисные услуги</h2>
+                <div class="payService__contentBlock contentBlock__list">
+                    <h2 class="payService__title"><?= Yii::$app->params['PayServicePage']['infoTitle'] ?></h2>
                     <h3 class="contentBlock__title">
-                        Пациент оплачивает только за применения дополнительных сервисных услуг, не
-                        предусмотренными стандартными мед.помощи ОМС:
+                        <?= Yii::$app->params['PayServicePage']['infoDescription'] ?>
                     </h3>
-                    <ul class="contentBlock__list">
-                        <li>
-                            Привлечение в лечебный процесс по контракту высококвалифицированных специалистов
-                            (профессоров, доцентов ,КМН и других специалистов), которые не входят в штаты ,
-                            предусмотренные ОМС,
-                        </li>
-                        <li>
-                            Установление усиленных постов мед.персонала (врачей, медсестер,санитарок), не
-                            предусмотренных в штаты ОМС,
-                        </li>
-                        <li>
-                            Дополнительное 6 разовое питание,превышающие нормативы предусмотренные ОМС,
-                        </li>
-                        <li>
-                            Применение лекарственных препаратов, не входящих в перечень жизненно необходимых и
-                            важных.
-                        </li>
-                        <li>
-                            Обеспечение высокого комфорта пребывания в центре.
-                        </li>
-                    </ul>
+                    <?= Yii::$app->params['PayServicePage']['infoList'] ?>
                 </div>
             </div>
             <div class="payServiceInfoImg col-12 col-lg-5 col-xl-4">
                 <div class="imgWrap">
-                    <img src="/public/images/21.jpg" alt="payServiceImg">
+                    <img src="/uploads/images/thumb_<?= Yii::$app->params['PayServicePage']['infoImage'] ?>" alt="payServiceImg">
                 </div>
             </div>
         </div>
-        <a href="#" class="gvnpLink">
-            Государственный реестр предельных отпускных цен производителей на лекарственные препараты, <br>
-            включенные в перечень жизненно необходимых и важнейших лекарственных препаратов (по состоянию на 25.03.2015)
+        <a href="/uploads/documents/<?= Yii::$app->params['PayServicePage']['infoDocName'] ?>" target="_blank" class="gvnpLink">
+            <?= Yii::$app->params['PayServicePage']['infoDocTitle'] ?>
         </a>
     </div>
 </div>

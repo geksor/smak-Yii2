@@ -766,22 +766,24 @@ svg{
   }
 }
 .contentBlock__list{
-  @extend .f_Montserrat-Medium,.fs_14,.fls_07,.fc_2e2,.flh_24;
-  padding-left: 25px;
-  li{
-    @extend .relative;
-    &:not(:last-child){
-      margin-bottom: 25px;
-    }
-    &:before{
-      @extend .absolute;
-      content: '';
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background-color: #51d379;
-      top: 8px;
-      left: -25px;
+  ul{
+    @extend .f_Montserrat-Medium,.fs_14,.fls_07,.fc_2e2,.flh_24;
+    padding-left: 25px;
+    li{
+      @extend .relative;
+      &:not(:last-child){
+        margin-bottom: 25px;
+      }
+      &:before{
+        @extend .absolute;
+        content: '';
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #51d379;
+        top: 8px;
+        left: -25px;
+      }
     }
   }
 }

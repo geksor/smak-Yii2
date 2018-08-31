@@ -18,6 +18,8 @@ class m180829_142147_create_gallery_table extends Migration
             'description' => $this->text(),
             'publish' => $this->integer(1)->defaultValue(0),
             'rank' => $this->integer(11)->defaultValue(1),
+            'imageWidth' => $this->integer(),
+            'imageHeight' => $this->integer(),
         ]);
     }
 

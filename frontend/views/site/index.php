@@ -66,43 +66,7 @@ $this->title = 'Хирургический центр СМАК - Главная'
     <div class="container">
         <div class="row justify-content-between">
             <div class="col-12 col-xl-6">
-                <div class="aboutBlock">
-                    <h2 class="aboutBlock__title">
-                        Кратко о медицинском
-                        центре <span>города Хасавюрт</span>
-                    </h2>
-                    <p class="aboutBlock__text">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                        mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit
-                        voluptatem
-                        <a href="#" class="reedMore" title="Читать полностью">
-                            <span class="dots dots_first"></span>
-                            <span class="dots dots_second"></span>
-                            <span class="dots dots_last"></span>
-                        </a>
-                    </p>
-                    <div class="row">
-                        <div class="col-4">
-                            <div class="aboutBlockImgWrap">
-                                <img src="public/images/12.jpg" alt="img">
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="aboutBlockImgWrap">
-                                <img src="public/images/13.jpg" alt="img">
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="aboutBlockImgWrap">
-                                <img src="public/images/14.jpg" alt="img">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?= \frontend\widgets\ShortAboutWidget::widget() ?>
             </div>
             <div class="col-12 col-xl-5">
                 <div class="newsBlock">
@@ -122,41 +86,20 @@ $this->title = 'Хирургический центр СМАК - Главная'
 <?= \frontend\widgets\ServiceTypeWidget::widget(); ?>
 <div class="payServiceLine">
     <div class="container">
-        <h2 class="payService__title">Платные сервисные услуги</h2>
+        <h2 class="payService__title"><?= Yii::$app->params['PayServicePage']['infoTitle'] ?></h2>
         <div class="row justify-content-center justify-content-lg-between">
             <div class="col-12 col-lg-7">
-                <div class="payService__contentBlock">
+                <div class="payService__contentBlock contentBlock__list">
                     <h3 class="contentBlock__title">
-                        Пациент оплачивает только за применения дополнительных сервисных услуг, не
-                        предусмотренными стандартными мед.помощи ОМС:
+                        <?= Yii::$app->params['PayServicePage']['infoDescription'] ?>
                     </h3>
-                    <ul class="contentBlock__list">
-                        <li>
-                            Привлечение в лечебный процесс по контракту высококвалифицированных специалистов
-                            (профессоров, доцентов ,КМН и других специалистов), которые не входят в штаты ,
-                            предусмотренные ОМС,
-                        </li>
-                        <li>
-                            Установление усиленных постов мед.персонала (врачей, медсестер,санитарок), не
-                            предусмотренных в штаты ОМС,
-                        </li>
-                        <li>
-                            Дополнительное 6 разовое питание,превышающие нормативы предусмотренные ОМС,
-                        </li>
-                        <li>
-                            Применение лекарственных препаратов, не входящих в перечень жизненно необходимых и
-                            важных.
-                        </li>
-                        <li>
-                            Обеспечение высокого комфорта пребывания в центре.
-                        </li>
-                    </ul>
+                    <?= Yii::$app->params['PayServicePage']['infoList'] ?>
                 </div>
             </div>
             <div class="col-12 col-lg-5 col-xl-4">
                 <div class="payService__linksBlock">
-                    <a href="#" class="priceLink" title="Прайс-лист">Прайс-лист</a>
-                    <a href="#" class="rulesLink" title="Правила предоставления">Правила предоставления</a>
+                    <a href="pay-service/index" class="priceLink" title="Прайс-лист">Прайс-лист</a>
+                    <a href="reminder/index" class="rulesLink" title="Правила предоставления">Правила предоставления</a>
                 </div>
             </div>
         </div>
@@ -232,7 +175,7 @@ $this->title = 'Хирургический центр СМАК - Главная'
                     </div>
                     <div class="col-10 col-md-8">
                         <p class="contactRow__title">Адрес:</p>
-                        <p class="contactRow__text">г.Хасавюрт, ул.Бамовская 57а</p>
+                        <p class="contactRow__text"><?= Yii::$app->params['Params']['address'] ?></p>
                     </div>
                 </div>
                 <div class="contactRow row">
@@ -251,11 +194,11 @@ $this->title = 'Хирургический центр СМАК - Главная'
                         <p class="contactRow__title">Звонок круглосуточный:</p>
                         <div class="row">
                             <div class="col-12 col-sm-5"><p class="contactRow__text">Справочная</p></div>
-                            <div class="col-12 col-sm-6"><p class="contactRow__text">+7(928)672-03-03</p></div>
+                            <div class="col-12 col-sm-6"><p class="contactRow__text"><?= Yii::$app->params['Params']['phoneInfo'] ?></p></div>
                             <div class="col-12 col-sm-5"><p class="contactRow__text">Приемная</p></div>
-                            <div class="col-12 col-sm-6"><p class="contactRow__text">+7(928)672-03-03</p></div>
+                            <div class="col-12 col-sm-6"><p class="contactRow__text"><?= Yii::$app->params['Params']['phoneReception'] ?></p></div>
                             <div class="col-12 col-sm-5"><p class="contactRow__text">Скорая помощь</p></div>
-                            <div class="col-12 col-sm-6"><p class="contactRow__text">+7(928)672-03-03</p></div>
+                            <div class="col-12 col-sm-6"><p class="contactRow__text"><?= Yii::$app->params['Params']['phoneAmbulance'] ?></p></div>
                         </div>
                     </div>
                 </div>
@@ -274,13 +217,13 @@ $this->title = 'Хирургический центр СМАК - Главная'
                     <div class="col-10 col-md-8">
                         <p class="contactRow__title">Режим работы:</p>
                         <p class="contactRow__text">
-                            Понедельник- пятница: с 9:30 до 16:00
+                            <?= Yii::$app->params['Params']['workDay'] ?>
                         </p>
                         <p class="contactRow__text">
-                            Суббота: с 9: 30 до 13:00
+                            <?= Yii::$app->params['Params']['shortDay'] ?>
                         </p>
                         <p class="contactRow__text">
-                            Выходной день: воскресенье
+                            <?= Yii::$app->params['Params']['hollyDay'] ?>
                         </p>
                     </div>
                 </div>
