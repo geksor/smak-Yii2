@@ -148,66 +148,66 @@ desired effect
                                 ["label" => "Платные услуги", "url" => ["/pages/pay-service"]],
                             ],
                         ],
-                        [
-                            "label" => "Widgets",
-                            "icon" => "th",
-                            "url" => "#",
-                            "items" => [
-                                ["label" => "Menu", "url" => ["site/menu"]],
-                                ["label" => "Boxes", "url" => ["site/boxes"]],
-                                ["label" => "FlashAlert", "url" => ["site/flash-alert"]],
-                                ["label" => "Callouts", "url" => ["site/callouts"]],
-                            ],
-                        ],
-                        [
-                            "label" => "Badges",
-                            "url" => "#",
-                            "icon" => "table",
-                            "items" => [
-                                [
-                                    "label" => "Default",
-                                    "url" => "#",
-                                    "icon" => "table",
-                                    "badge" => "123",
-                                ],
-                                [
-                                    "label" => "Blue",
-                                    "url" => "#",
-                                    "icon" => "table",
-                                    "badge" => "123",
-                                    "badgeOptions" => [
-                                        "class" => \yiister\adminlte\components\AdminLTE::BG_BLUE,
-                                    ],
-                                ],
-                            ],
-                        ],
-                        [
-                            "label" => "Multilevel",
-                            "url" => "#",
-                            "icon" => "table",
-                            "items" => [
-                                [
-                                    "label" => "Second level",
-                                    "url" => "#",
-                                ],
-                                [
-                                    "label" => "Second level",
-                                    "url" => "#",
-                                    "icon" => "table",
-                                    "items" => [
-                                        [
-                                            "label" => "Default",
-                                            "url" => "#",
-                                        ],
-                                        [
-                                            "label" => "Red",
-                                            "url" => "#",
-                                            "icon" => "table",
-                                        ],
-                                    ],
-                                ],
-                            ],
-                        ],
+//                        [
+//                            "label" => "Widgets",
+//                            "icon" => "th",
+//                            "url" => "#",
+//                            "items" => [
+//                                ["label" => "Menu", "url" => ["site/menu"]],
+//                                ["label" => "Boxes", "url" => ["site/boxes"]],
+//                                ["label" => "FlashAlert", "url" => ["site/flash-alert"]],
+//                                ["label" => "Callouts", "url" => ["site/callouts"]],
+//                            ],
+//                        ],
+//                        [
+//                            "label" => "Badges",
+//                            "url" => "#",
+//                            "icon" => "table",
+//                            "items" => [
+//                                [
+//                                    "label" => "Default",
+//                                    "url" => "#",
+//                                    "icon" => "table",
+//                                    "badge" => "123",
+//                                ],
+//                                [
+//                                    "label" => "Blue",
+//                                    "url" => "#",
+//                                    "icon" => "table",
+//                                    "badge" => "123",
+//                                    "badgeOptions" => [
+//                                        "class" => \yiister\adminlte\components\AdminLTE::BG_BLUE,
+//                                    ],
+//                                ],
+//                            ],
+//                        ],
+//                        [
+//                            "label" => "Multilevel",
+//                            "url" => "#",
+//                            "icon" => "table",
+//                            "items" => [
+//                                [
+//                                    "label" => "Second level",
+//                                    "url" => "#",
+//                                ],
+//                                [
+//                                    "label" => "Second level",
+//                                    "url" => "#",
+//                                    "icon" => "table",
+//                                    "items" => [
+//                                        [
+//                                            "label" => "Default",
+//                                            "url" => "#",
+//                                        ],
+//                                        [
+//                                            "label" => "Red",
+//                                            "url" => "#",
+//                                            "icon" => "table",
+//                                        ],
+//                                    ],
+//                                ],
+//                            ],
+//                        ],
                     ],
                 ]
             )
