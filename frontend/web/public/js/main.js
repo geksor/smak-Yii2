@@ -1,5 +1,3 @@
-slide();
-
 var agreeEmail = '';
 var agreeName = '';
 var agreeINN = '';
