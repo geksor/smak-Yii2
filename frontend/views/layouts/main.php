@@ -25,6 +25,34 @@ PublicAsset::register($this);
 
 <div id="menu" class="menu slideout-menu slideout-menu-left">
     <div class="left_menu">
+        <?= \frontend\widgets\HeaderMenu::widget(
+            [
+                'items' => [
+                    ['label' => 'Платные услуги', 'url' => ['/pay-service/index'], 'options' => ['class' => 'col-auto']],
+                    ['label' => 'Памятка пациенту', 'url' => ['/reminder/index'], 'options' => ['class' => 'col-auto']],
+                    [
+                        'label' => 'ОМС',
+                        'url' => ['/oms/index'],
+                        'options' => ['class' => 'col-auto'],
+                        'items' => [
+                            ['label' => 'Виды услуг', 'url' => ['/service-type/index']],
+                            ['label' => 'Расписание приема', 'url' => ['/table/index']],
+                        ],
+                    ],
+                    ['label' => 'Врачи', 'url' => ['/doctors/index'], 'options' => ['class' => 'col-auto']],
+                    ['label' => 'Новости', 'url' => ['/news/index'], 'options' => ['class' => 'col-auto']],
+                    ['label' => 'Отзывы', 'url' => ['/comments/index'], 'options' => ['class' => 'col-auto']],
+                    [
+                        'label' => 'О клинике',
+                        'url' => ['/about/index'],
+                        'options' => ['class' => 'col-auto'],
+                        'items' => [
+                            ['label' => 'Вакансии', 'url' => ['/vacancy/index']],
+                        ],
+                    ],
+                ]
+            ]
+        ) ?>
     </div>
 </div>
 <div id="panel" class="wrapper panel slideout-panel slideout-panel-left page
