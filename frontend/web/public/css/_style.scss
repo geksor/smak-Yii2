@@ -152,6 +152,24 @@ body{
   @extend .flex,.flex_col;
   min-height: 100vh;
   background-color: $mainBackgroundColor;
+  &.blur{
+    -webkit-filter: blur(15px);
+    filter: blur(15px);
+  }
+  &.menuOpen{
+    position: fixed;
+    width: 100%;
+  }
+  &.popUp{
+    position: fixed;
+    width: 100%;
+    &:before{
+      @extend .absolute_100prc;
+      content: '';
+      background-color: rgba(59, 153, 248, 0.8);
+      z-index: 4;
+    }
+  }
 }
 .main{
   @extend .relative;
@@ -159,6 +177,7 @@ body{
 }
 
 .btn_slideout{
+  cursor: pointer;
   rect{
     fill: #ffbe29;
     &:first-child{
@@ -174,25 +193,43 @@ body{
 }
 
 
-.left_menu {
-  @extend .text-transform_uppercase,.fs_16,.fc_fff;
+.mobileMenu{
+  @extend .absolute,.f_Montserrat-SemiBold,.fc_fff;
+  display: none;
+  left: 0;
+  top: 0;
+  width: 100%;
+  min-height: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  z-index: 20;
+  background-color: rgba(37, 107, 84, 0.7);
   ul{
-    padding: 10px 20px 0;
-    >li{
-      border-bottom: thin solid rgba(255, 255, 255, 0.2);
-      >a{
-        padding: 18px 0;
+    li{
+      &:first-child{
+        border-top: solid 1px #dedede;
+      }
+      border-bottom: solid 1px #dedede;
+      &.active{
+        background-color: rgba(59, 153, 248, 0.4);
+      }
+      a{
+        display: block;
         width: 100%;
-        font-size: 18px;
+        padding-top: 15px;
+        padding-bottom: 15px;
       }
     }
   }
 }
-.inner_lm{
-  padding: 0 20px;
-}
-.socIco_lm{
-  margin-top: 20px;
+.closeBlock{
+  @extend .flex,.justify-content-end;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  #mMenuClose{
+    font-size: 0;
+    cursor: pointer;
+  }
 }
 
 .socIco{

@@ -56,10 +56,9 @@ var agreeAdres = '';
     $(document).on('click', function (event) {
         if ($(event.target).closest(".noneClose").length
             || $(event.target).closest("#mess_block").length
-            || !$(event.target).hasClass('panel-open')) {
+            || !$(event.target).hasClass('popUp')) {
             return;
         }
-        $closeForm.find('.close').trigger('click');
         $('#ok').trigger('click');
         event.stopPropagation();
     });

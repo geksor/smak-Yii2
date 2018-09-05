@@ -1207,7 +1207,7 @@ html {
 .justify-content-start {
   justify-content: flex-start !important; }
 
-.justify-content-end {
+.justify-content-end, .closeBlock {
   justify-content: flex-end !important; }
 
 .justify-content-center, .def_button, .messBlock__button, .slider__moreButton, .slider__signUpButton, .priceLink, .rulesLink, .consultForm__submit, .commentForm__submit, .payService__linksBlock, .omsDocLink, .tableDoctorWrap .doctor__selectWrap:after, .pagination ul li a, .pagination ul li span {
@@ -2710,7 +2710,7 @@ html {
 @font-face {
   font-family: Montserrat-SemiBold;
   src: url(../css/fonts/Montserrat-SemiBold.ttf); }
-.f_Montserrat-SemiBold, .def_title, .aboutBlock__title, .newsBlock__title, .serviceType__title, .payService__title, .contact__title, .pageTitle, .licenseTitle, .newsBlock__allNewsLink, .newsTitle, .service_slide .slideNumber, .service_slide .slideTitle, .contentBlock__title, .contactRow__title, .insCompany__title, .tableHead, .tableRow .servPrice, .toggleBlock__toggle_text h2 b, .toggleBlock__toggle_text h2 strong, .toggleBlock__toggle_text h3 b, .toggleBlock__toggle_text h3 strong, .toggleBlock__toggle_text h4 b, .toggleBlock__toggle_text h4 strong, .toggleBlock__toggle_text p b, .toggleBlock__toggle_text p strong, .tableDoctorWrap-sm .tableHeaderRow, .tableDoctorWrap label, .tableDoctorWrap .doctor__selectWrap .select, .tableDoctorWrap .doctorTiming .nameTitle, .newsPublishDate, .commentTitle, .vacansyTitle, .commentCreateDate, .vacansyCreateDate, .aboutContactTitle, .aboutContactBody .bold {
+.f_Montserrat-SemiBold, .mobileMenu, .def_title, .aboutBlock__title, .newsBlock__title, .serviceType__title, .payService__title, .contact__title, .pageTitle, .licenseTitle, .newsBlock__allNewsLink, .newsTitle, .service_slide .slideNumber, .service_slide .slideTitle, .contentBlock__title, .contactRow__title, .insCompany__title, .tableHead, .tableRow .servPrice, .toggleBlock__toggle_text h2 b, .toggleBlock__toggle_text h2 strong, .toggleBlock__toggle_text h3 b, .toggleBlock__toggle_text h3 strong, .toggleBlock__toggle_text h4 b, .toggleBlock__toggle_text h4 strong, .toggleBlock__toggle_text p b, .toggleBlock__toggle_text p strong, .tableDoctorWrap-sm .tableHeaderRow, .tableDoctorWrap label, .tableDoctorWrap .doctor__selectWrap .select, .tableDoctorWrap .doctorTiming .nameTitle, .newsPublishDate, .commentTitle, .vacansyTitle, .commentCreateDate, .vacansyCreateDate, .aboutContactTitle, .aboutContactBody .bold {
   font-family: Montserrat-SemiBold, sans-serif; }
 
 @font-face {
@@ -2737,7 +2737,7 @@ html {
 .fs_14, .def_text, .aboutBlock__text, .newsText, .service_slide .slideText, .def_desc, .def_button, .messBlock__button, .slider__moreButton, .slider__signUpButton, .priceLink, .rulesLink, .consultForm__submit, .commentForm__submit, .newsBlock__allNewsLink, .contentBlock__title, .contentBlock__list ul, .copyright, .weLinkWrap, .footer__menu, .tableHead, .tableRow, .toggleBlock__toggle_text h2, .toggleBlock__toggle_text h3, .toggleBlock__toggle_text h4, .toggleBlock__toggle_text p, .omsDocLink, .tableDoctorWrap, .tableDoctorWrap .doctor__selectWrap .select option, .newsShortText, .newsReadMore, .newsFullText, .pagination ul, .commentText, .vacansyText, .aboutText {
   font-size: 14px; }
 
-.fs_16, .left_menu, .header, .newsTitle, .service_slide .slideNumber, .consultForm__input, .commentForm__input, .commentForm__textarea, .contactRow__text, .gvnpLink, .tableDoctorWrap-sm, .tableDoctorWrap label, .tableDoctorWrap .doctor__selectWrap .select, .tableDoctorWrap .doctorTiming .nameTitle, .tableDoctorWrap .doctorTiming .tableMobile__time, .personalText .name, .commentTitle, .vacansyTitle, .aboutContactBody {
+.fs_16, .header, .newsTitle, .service_slide .slideNumber, .consultForm__input, .commentForm__input, .commentForm__textarea, .contactRow__text, .gvnpLink, .tableDoctorWrap-sm, .tableDoctorWrap label, .tableDoctorWrap .doctor__selectWrap .select, .tableDoctorWrap .doctorTiming .nameTitle, .tableDoctorWrap .doctorTiming .tableMobile__time, .personalText .name, .commentTitle, .vacansyTitle, .aboutContactBody {
   font-size: 16px; }
 
 .fs_18, .h, .service_slide .slideTitle, .contactRow__title, .tableRow .servPrice {
@@ -2752,7 +2752,7 @@ html {
 .fs_36, .aboutContactTitle {
   font-size: 36px; }
 
-.fc_fff, .left_menu, .header, .slider__text, .slider__moreButton, .priceLink, .rulesLink, .consultForm__title, .commentForm__title, .consultForm__input, .commentForm__input, .commentForm__textarea, .copyright, .weLinkWrap, .footer__menu, .gvnpLink, .omsDocLink {
+.fc_fff, .mobileMenu, .header, .slider__text, .slider__moreButton, .priceLink, .rulesLink, .consultForm__title, .commentForm__title, .consultForm__input, .commentForm__input, .commentForm__textarea, .copyright, .weLinkWrap, .footer__menu, .gvnpLink, .omsDocLink {
   color: #ffffff; }
 
 .fc_2e2, .def_title, .aboutBlock__title, .newsBlock__title, .serviceType__title, .payService__title, .contact__title, .pageTitle, .licenseTitle, .def_text, .aboutBlock__text, .newsText, .service_slide .slideText, .service_slide .slideTitle, .contentBlock__title, .contentBlock__list ul, .contactRow, .insCompany__title, .toggleBlock__title, .tableHead, .tableRow, .toggleBlock__toggle_text h2, .toggleBlock__toggle_text h3, .toggleBlock__toggle_text h4, .toggleBlock__toggle_text p, .tableDoctorWrap-sm, .personalText .name, .newsTitle, .newsShortText, .newsFullText, .commentTitle, .vacansyTitle, .commentText, .vacansyText, .aboutText, .aboutContactTitle, .aboutContactBody {
@@ -2797,10 +2797,10 @@ html {
 .text-align_center, .def_desc, .newsBlock__allNewWrapBottom, .consultForm__form .form-group .help-block, .commentForm__form .form-group .help-block, .consultForm__title, .commentForm__title, .consultForm__input, .commentForm__input, .commentForm__textarea, .contactRow .ico, .dayCount, .servPrice, .gvnpLink, .omsDocLink, .personalText {
   text-align: center; }
 
-.text-transform_uppercase, .left_menu, .newsBlock__allNewsLink, .copyright {
+.text-transform_uppercase, .newsBlock__allNewsLink, .copyright {
   text-transform: uppercase; }
 
-.flex, .page, .def_button, .messBlock__button, .slider__moreButton, .slider__signUpButton, .priceLink, .rulesLink, .consultForm__submit, .commentForm__submit, .service_slide, .payService__linksBlock, .omsDocLink, .tableDoctorWrap .doctor__selectWrap:after, .pagination ul, .pagination ul li a, .pagination ul li span {
+.flex, .page, .closeBlock, .def_button, .messBlock__button, .slider__moreButton, .slider__signUpButton, .priceLink, .rulesLink, .consultForm__submit, .commentForm__submit, .service_slide, .payService__linksBlock, .omsDocLink, .tableDoctorWrap .doctor__selectWrap:after, .pagination ul, .pagination ul li a, .pagination ul li span {
   display: flex; }
 
 .flex_col, .page {
@@ -2809,10 +2809,10 @@ html {
 .relative, .main, .sliderLine, .contentBlock__list ul li, .consultForm__form .form-group, .commentForm__form .form-group, .tableDoctorWrap .doctor__selectWrap, .tableDoctorWrap .doctor__selectWrap .select, .newsPageImgWrap, .pagination ul li {
   position: relative; }
 
-.absolute, .absolute_100prc, .newsPageImgWrap img, .pagination ul li a, .pagination ul li span, .header__mainMenu li ul, .slider__navBlock, .contentBlock__list ul li:before, .bgndImageBlock::before, .consultForm__form .form-group .help-block, .commentForm__form .form-group .help-block, .contactLine .map, .footer__leftBlock, .tableDoctorWrap .doctor__selectWrap:after {
+.absolute, .absolute_100prc, .page.popUp:before, .newsPageImgWrap img, .pagination ul li a, .pagination ul li span, .mobileMenu, .header__mainMenu li ul, .slider__navBlock, .contentBlock__list ul li:before, .bgndImageBlock::before, .consultForm__form .form-group .help-block, .commentForm__form .form-group .help-block, .contactLine .map, .footer__leftBlock, .tableDoctorWrap .doctor__selectWrap:after {
   position: absolute; }
 
-.absolute_100prc, .newsPageImgWrap img, .pagination ul li a, .pagination ul li span {
+.absolute_100prc, .page.popUp:before, .newsPageImgWrap img, .pagination ul li a, .pagination ul li span {
   top: 0;
   right: 0;
   bottom: 0;
@@ -2825,34 +2825,63 @@ body {
 .page {
   min-height: 100vh;
   background-color: #ffffff; }
+  .page.blur {
+    -webkit-filter: blur(15px);
+    filter: blur(15px); }
+  .page.menuOpen {
+    position: fixed;
+    width: 100%; }
+  .page.popUp {
+    position: fixed;
+    width: 100%; }
+    .page.popUp:before {
+      content: '';
+      background-color: rgba(59, 153, 248, 0.8);
+      z-index: 4; }
 
 .main {
   flex: 1; }
 
-.btn_slideout rect {
-  fill: #ffbe29; }
-  .btn_slideout rect:first-child {
-    fill: #7cc623; }
-  .btn_slideout rect:last-child {
-    fill: #df0024; }
-@media (min-width: 992px) {
-  .btn_slideout {
-    display: none; } }
+.btn_slideout {
+  cursor: pointer; }
+  .btn_slideout rect {
+    fill: #ffbe29; }
+    .btn_slideout rect:first-child {
+      fill: #7cc623; }
+    .btn_slideout rect:last-child {
+      fill: #df0024; }
+  @media (min-width: 992px) {
+    .btn_slideout {
+      display: none; } }
 
-.left_menu ul {
-  padding: 10px 20px 0; }
-  .left_menu ul > li {
-    border-bottom: thin solid rgba(255, 255, 255, 0.2); }
-    .left_menu ul > li > a {
-      padding: 18px 0;
+.mobileMenu {
+  display: none;
+  left: 0;
+  top: 0;
+  width: 100%;
+  min-height: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  z-index: 20;
+  background-color: rgba(37, 107, 84, 0.7); }
+  .mobileMenu ul li {
+    border-bottom: solid 1px #dedede; }
+    .mobileMenu ul li:first-child {
+      border-top: solid 1px #dedede; }
+    .mobileMenu ul li.active {
+      background-color: rgba(59, 153, 248, 0.4); }
+    .mobileMenu ul li a {
+      display: block;
       width: 100%;
-      font-size: 18px; }
+      padding-top: 15px;
+      padding-bottom: 15px; }
 
-.inner_lm {
-  padding: 0 20px; }
-
-.socIco_lm {
-  margin-top: 20px; }
+.closeBlock {
+  padding-top: 15px;
+  padding-bottom: 15px; }
+  .closeBlock #mMenuClose {
+    font-size: 0;
+    cursor: pointer; }
 
 .socIco .socIco_item {
   transition: transform .2s ease, box-shadow .2s ease;

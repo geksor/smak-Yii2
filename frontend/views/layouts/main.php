@@ -23,40 +23,34 @@ PublicAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 
-<div id="menu" class="menu slideout-menu slideout-menu-left">
-    <div class="left_menu">
-        <?= \frontend\widgets\HeaderMenu::widget(
+<div id="menu" class="mobileMenu">
+    <div class="closeBlock">
+        <button id="mMenuClose">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 224.512 224.512" style="enable-background:new 0 0 224.512 224.512;" xml:space="preserve" width="30px" height="30px">
+<g>
+    <polygon points="224.507,6.997 217.521,0 112.256,105.258 6.998,0 0.005,6.997 105.263,112.254    0.005,217.512 6.998,224.512 112.256,119.24 217.521,224.512 224.507,217.512 119.249,112.254  " fill="#FFFFFF"/>
+</g>
+</svg>
+        </button>
+    </div>
+        <?= \frontend\widgets\MobileMenu::widget(
             [
                 'items' => [
-                    ['label' => 'Платные услуги', 'url' => ['/pay-service/index'], 'options' => ['class' => 'col-auto']],
-                    ['label' => 'Памятка пациенту', 'url' => ['/reminder/index'], 'options' => ['class' => 'col-auto']],
-                    [
-                        'label' => 'ОМС',
-                        'url' => ['/oms/index'],
-                        'options' => ['class' => 'col-auto'],
-                        'items' => [
-                            ['label' => 'Виды услуг', 'url' => ['/service-type/index']],
-                            ['label' => 'Расписание приема', 'url' => ['/table/index']],
-                        ],
-                    ],
-                    ['label' => 'Врачи', 'url' => ['/doctors/index'], 'options' => ['class' => 'col-auto']],
-                    ['label' => 'Новости', 'url' => ['/news/index'], 'options' => ['class' => 'col-auto']],
-                    ['label' => 'Отзывы', 'url' => ['/comments/index'], 'options' => ['class' => 'col-auto']],
-                    [
-                        'label' => 'О клинике',
-                        'url' => ['/about/index'],
-                        'options' => ['class' => 'col-auto'],
-                        'items' => [
-                            ['label' => 'Вакансии', 'url' => ['/vacancy/index']],
-                        ],
-                    ],
+                    ['label' => 'Платные услуги', 'url' => ['/pay-service/index'], 'options' => ['class' => 'col-12']],
+                    ['label' => 'Памятка пациенту', 'url' => ['/reminder/index'], 'options' => ['class' => 'col-12']],
+                    ['label' => 'ОМС', 'url' => ['/oms/index'], 'options' => ['class' => 'col-12']],
+                    ['label' => 'Виды услуг', 'url' => ['/service-type/index'], 'options' => ['class' => 'col-12']],
+                    ['label' => 'Расписание приема', 'url' => ['/table/index'], 'options' => ['class' => 'col-12']],
+                    ['label' => 'Врачи', 'url' => ['/doctors/index'], 'options' => ['class' => 'col-12']],
+                    ['label' => 'Новости', 'url' => ['/news/index'], 'options' => ['class' => 'col-12']],
+                    ['label' => 'Отзывы', 'url' => ['/comments/index'], 'options' => ['class' => 'col-12']],
+                    ['label' => 'О клинике', 'url' => ['/about/index'], 'options' => ['class' => 'col-12']],
+                    ['label' => 'Вакансии', 'url' => ['/vacancy/index'], 'options' => ['class' => 'col-12']],
                 ]
             ]
         ) ?>
-    </div>
 </div>
-<div id="panel" class="wrapper panel slideout-panel slideout-panel-left page
-    <?= Yii::$app->session->hasFlash('mess')? 'panel-open' : '' ?>">
+<div id="panel" class="panel page <?= Yii::$app->session->hasFlash('mess')? 'popUp blur' : '' ?>">
 
     <header class="header<?= Yii::$app->request->url == Yii::$app->homeUrl ? '' : ' otherPage' ?>">
         <div class="container">

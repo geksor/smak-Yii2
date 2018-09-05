@@ -21,7 +21,7 @@ class PublicAsset extends AssetBundle
         'public/js/vendor/slideout.js',
         'public/js/vendor/jquery.fancybox.min.js',
         'public/js/agreement.js',
-        'public/js/main.js',
+        'public/js/mainNew.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
