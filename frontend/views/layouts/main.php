@@ -16,6 +16,12 @@ PublicAsset::register($this);
     <meta charset="<?= Yii::$app->charset ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#3b98fa">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#3b98fa">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#3b98fa">
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
