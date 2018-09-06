@@ -15,7 +15,7 @@ $this->title = 'Специалисты нашего центра';
                                 <div class="row align-items-center">
                                     <div class="col-6">
                                         <div class="personalImg">
-                                            <?= \yii\helpers\Html::img($model->getPhoto(), ['alt' => $model->name])?>
+                                            <?= \yii\helpers\Html::img($model->getThumbPhoto(), ['alt' => $model->name])?>
                                         </div>
                                     </div>
                                     <div class="col-6">

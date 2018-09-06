@@ -112,16 +112,16 @@ desired effect
                 [
                     "items" => [
                         ["label" => "Главная", "url" => "/admin", "icon" => "home"],
-                        ["label" => "Заявки на запись", "url" => ["/registration/index"], "icon" => "phone"],
-                        ["label" => "Виды услуг", "url" => ["/service-type/index"], "icon" => "heartbeat"],
+                        ["label" => "Заявки на запись", "url" => ["/registration/index"], "icon" => "phone", 'active' => Yii::$app->controller->id == 'registration'],
+                        ["label" => "Виды услуг", "url" => ["/service-type/index"], "icon" => "heartbeat", 'active' => Yii::$app->controller->id == 'service-type'],
                         [
                             "label" => "Персонал",
                             "icon" => "user-md",
                             "url" => "#",
                             "items" => [
-                                ["label" => "Должности", "url" => ["/position/index"]],
-                                ["label" => "Сотрудники", "url" => ["/doctor/index"]],
-                                ["label" => "Вакансии", "url" => ["/vacancy/index"]],
+                                ["label" => "Должности", "url" => ["/position/index"], 'active' => Yii::$app->controller->id == 'position'],
+                                ["label" => "Сотрудники", "url" => ["/doctor/index"], 'active' => Yii::$app->controller->id == 'doctor'],
+                                ["label" => "Вакансии", "url" => ["/vacancy/index"], 'active' => Yii::$app->controller->id == 'vacancy'],
                             ],
                         ],
                         [
@@ -129,14 +129,14 @@ desired effect
                             "icon" => "file-text",
                             "url" => "#",
                             "items" => [
-                                ["label" => "Ссылки на документы", "url" => ["/oms-link/index"]],
-                                ["label" => "Информация", "url" => ["/oms-info/index"]],
+                                ["label" => "Ссылки на документы", "url" => ["/oms-link/index"], 'active' => Yii::$app->controller->id == 'oms-link'],
+                                ["label" => "Информация", "url" => ["/oms-info/index"], 'active' => Yii::$app->controller->id == 'oms-info'],
                             ],
                         ],
-                        ["label" => "Памятка пациенту", "url" => ["/reminder/index"], "icon" => "info-circle"],
-                        ["label" => "Отзывы", "url" => ["/comment/index"], "icon" => "comments"],
-                        ["label" => "Новоти", "url" => ["/news/index"], "icon" => "newspaper-o"],
-                        ["label" => "Галлереи изображений", "url" => ["/gallery/index"], "icon" => "instagram"],
+                        ["label" => "Памятка пациенту", "url" => ["/reminder/index"], "icon" => "info-circle", 'active' => Yii::$app->controller->id == 'reminder'],
+                        ["label" => "Отзывы", "url" => ["/comment/index"], "icon" => "comments", 'active' => Yii::$app->controller->id == 'comment'],
+                        ["label" => "Новоти", "url" => ["/news/index"], "icon" => "newspaper-o", 'active' => Yii::$app->controller->id == 'news'],
+                        ["label" => "Галлереи изображений", "url" => ["/gallery/index"], "icon" => "instagram", 'active' => Yii::$app->controller->id == 'gallery'],
                         [
                             "label" => "Страницы",
                             "icon" => "code",

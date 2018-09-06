@@ -2865,9 +2865,9 @@ body {
   z-index: 20;
   background-color: rgba(37, 107, 84, 0.7); }
   .mobileMenu ul li {
-    border-bottom: solid 1px #dedede; }
+    border-bottom: solid 1px rgba(222, 222, 222, 0.25); }
     .mobileMenu ul li:first-child {
-      border-top: solid 1px #dedede; }
+      border-top: solid 1px rgba(222, 222, 222, 0.25); }
     .mobileMenu ul li.active {
       background-color: rgba(59, 153, 248, 0.4); }
     .mobileMenu ul li a {
