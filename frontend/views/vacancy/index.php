@@ -5,13 +5,13 @@
 
 use yii\widgets\LinkPager;
 
-$this->title = 'Вакансии';
+$this->title = Yii::$app->params['VacancyPage']['pageTitle'];
 ?>
 
 <div class="container">
     <h1 class="pageTitle"><?= $this->title ?></h1>
     <div class="pageMainImage">
-        <img src="/public/images/35.jpg" alt="Вакансии">
+        <img src="/uploads/images/<?= Yii::$app->params['VacancyPage']['pageImage'] ?>" alt="<?= Yii::$app->params['VacancyPage']['pageTitle'] ?>">
     </div>
     <div class="vacansyBlockWrap">
         <? if ($models != null) {?>
