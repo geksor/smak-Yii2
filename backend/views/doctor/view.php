@@ -48,11 +48,11 @@ $this->params['breadcrumbs'][] = $this->title;
             'diplom:ntext',
             [
                 'label' => 'График приема',
-                'value' => $model->table->table_pay,
+                'value' => $model->table['table_pay'],
             ],
             [
                 'label' => 'По ОМС',
-                'value' => $model->table->table_oms,
+                'value' => $model->table['table_oms'],
             ],
             [
                 'label' => 'Состояние',
