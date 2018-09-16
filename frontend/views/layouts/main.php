@@ -59,7 +59,29 @@ PublicAsset::register($this);
 <div id="panel" class="panel page <?= Yii::$app->session->hasFlash('mess')? 'popUp blur' : '' ?>">
 
     <header class="header<?= Yii::$app->request->url == Yii::$app->homeUrl ? '' : ' otherPage' ?>">
-        <div class="container">
+        <div class="searchBlock noneClose">
+            <div class="searchContainer container">
+                <div class="searchRow row align-items-center">
+                    <form class="col-12">
+                        <div class="row">
+                            <div class="col">
+                                <input class="searchForm__input" type="text" placeholder="Поиск по сайту">
+                            </div>
+                            <div class="col-auto">
+                                <button class="searchForm__button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                         width="24px" height="24px">
+                                        <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
+                                              d="M23.843,21.667 L18.803,16.595 C20.029,14.879 20.701,12.831 20.701,10.675 C20.701,7.958 19.650,5.404 17.740,3.482 C15.831,1.561 13.292,0.501 10.590,0.501 C7.890,0.501 5.350,1.559 3.441,3.482 C1.532,5.402 0.480,7.957 0.480,10.675 C0.480,13.392 1.531,15.947 3.441,17.870 C5.350,19.790 7.889,20.849 10.590,20.849 C12.733,20.849 14.767,20.175 16.471,18.941 L21.512,24.012 C21.836,24.337 22.256,24.498 22.678,24.498 C23.100,24.498 23.521,24.337 23.843,24.012 C24.487,23.365 24.487,22.314 23.843,21.667 ZM5.773,15.524 C4.486,14.228 3.778,12.505 3.778,10.675 C3.778,8.845 4.486,7.122 5.773,5.827 C7.060,4.531 8.770,3.818 10.590,3.818 C12.410,3.818 14.122,4.531 15.409,5.827 C16.695,7.122 17.404,8.845 17.404,10.675 C17.404,12.505 16.696,14.227 15.409,15.524 C14.121,16.819 12.411,17.531 10.590,17.531 C8.769,17.530 7.058,16.818 5.773,15.524 Z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="container header__container">
             <div class="row align-items-center justify-content-between">
                 <div class="btn_mobile col-auto">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -108,7 +130,7 @@ PublicAsset::register($this);
                 <div class="col-auto col-lg-12 col-xl-auto">
                     <div class="row align-items-center justify-content-end justify-content-xl-start">
                         <div class="header__searchButtonWrap col-auto">
-                            <button class="header__searchButton">
+                            <button id="searchOpen" class="header__searchButton noneClose">
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                      width="24px" height="24px">
                                     <path fill-rule="evenodd" fill="rgb(255, 255, 255)"

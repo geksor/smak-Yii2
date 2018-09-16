@@ -2710,7 +2710,7 @@ html {
 @font-face {
   font-family: Montserrat-SemiBold;
   src: url(../css/fonts/Montserrat-SemiBold.ttf); }
-.f_Montserrat-SemiBold, .mobileMenu, .def_title, .aboutBlock__title, .newsBlock__title, .serviceType__title, .payService__title, .contact__title, .pageTitle, .licenseTitle, .newsBlock__allNewsLink, .newsTitle, .service_slide .slideNumber, .service_slide .slideTitle, .contentBlock__title, .contactRow__title, .insCompany__title, .tableHead, .tableRow .servPrice, .toggleBlock__toggle_text h2 b, .toggleBlock__toggle_text h2 strong, .toggleBlock__toggle_text h3 b, .toggleBlock__toggle_text h3 strong, .toggleBlock__toggle_text h4 b, .toggleBlock__toggle_text h4 strong, .toggleBlock__toggle_text p b, .toggleBlock__toggle_text p strong, .tableDoctorWrap-sm .tableHeaderRow, .tableDoctorWrap label, .tableDoctorWrap .doctor__selectWrap .select, .tableDoctorWrap .doctorTiming .nameTitle, .newsPublishDate, .commentTitle, .vacansyTitle, .commentCreateDate, .vacansyCreateDate, .aboutContactTitle, .aboutContactBody .bold {
+.f_Montserrat-SemiBold, .mobileMenu, .def_title, .aboutBlock__title, .newsBlock__title, .serviceType__title, .payService__title, .contact__title, .pageTitle, .licenseTitle, .searchBlock, .newsBlock__allNewsLink, .newsTitle, .service_slide .slideNumber, .service_slide .slideTitle, .contentBlock__title, .contactRow__title, .insCompany__title, .tableHead, .tableRow .servPrice, .toggleBlock__toggle_text h2 b, .toggleBlock__toggle_text h2 strong, .toggleBlock__toggle_text h3 b, .toggleBlock__toggle_text h3 strong, .toggleBlock__toggle_text h4 b, .toggleBlock__toggle_text h4 strong, .toggleBlock__toggle_text p b, .toggleBlock__toggle_text p strong, .tableDoctorWrap-sm .tableHeaderRow, .tableDoctorWrap label, .tableDoctorWrap .doctor__selectWrap .select, .tableDoctorWrap .doctorTiming .nameTitle, .newsPublishDate, .commentTitle, .vacansyTitle, .commentCreateDate, .vacansyCreateDate, .aboutContactTitle, .aboutContactBody .bold {
   font-family: Montserrat-SemiBold, sans-serif; }
 
 @font-face {
@@ -2722,7 +2722,7 @@ html {
 @font-face {
   font-family: Montserrat-Regular;
   src: url(../css/fonts/Montserrat-Regular.ttf); }
-.f_Montserrat-Regular, body, .def_desc, .def_button, .messBlock__button, .slider__moreButton, .slider__signUpButton, .priceLink, .rulesLink, .consultForm__submit, .commentForm__submit, .consultForm__input, .commentForm__input, .commentForm__textarea, .toggleBlock__toggle_text h2, .toggleBlock__toggle_text h3, .toggleBlock__toggle_text h4, .toggleBlock__toggle_text p, .tableDoctorWrap, .newsShortText, .newsReadMore, .newsFullText, .commentText, .vacansyText, .aboutText {
+.f_Montserrat-Regular, body, .def_desc, .def_button, .messBlock__button, .slider__moreButton, .slider__signUpButton, .priceLink, .rulesLink, .consultForm__submit, .commentForm__submit, .consultForm__input, .commentForm__input, .commentForm__textarea, .searchForm__input, .toggleBlock__toggle_text h2, .toggleBlock__toggle_text h3, .toggleBlock__toggle_text h4, .toggleBlock__toggle_text p, .tableDoctorWrap, .newsShortText, .newsReadMore, .newsFullText, .commentText, .vacansyText, .aboutText {
   font-family: Montserrat-Regular, sans-serif; }
 
 @font-face {
@@ -2737,7 +2737,7 @@ html {
 .fs_14, .def_text, .aboutBlock__text, .newsText, .service_slide .slideText, .def_desc, .def_button, .messBlock__button, .slider__moreButton, .slider__signUpButton, .priceLink, .rulesLink, .consultForm__submit, .commentForm__submit, .newsBlock__allNewsLink, .contentBlock__title, .contentBlock__list ul, .copyright, .weLinkWrap, .footer__menu, .tableHead, .tableRow, .toggleBlock__toggle_text h2, .toggleBlock__toggle_text h3, .toggleBlock__toggle_text h4, .toggleBlock__toggle_text p, .omsDocLink, .tableDoctorWrap, .tableDoctorWrap .doctor__selectWrap .select option, .newsShortText, .newsReadMore, .newsFullText, .pagination ul, .commentText, .vacansyText, .aboutText {
   font-size: 14px; }
 
-.fs_16, .header, .newsTitle, .service_slide .slideNumber, .consultForm__input, .commentForm__input, .commentForm__textarea, .contactRow__text, .gvnpLink, .tableDoctorWrap-sm, .tableDoctorWrap label, .tableDoctorWrap .doctor__selectWrap .select, .tableDoctorWrap .doctorTiming .nameTitle, .tableDoctorWrap .doctorTiming .tableMobile__time, .personalText .name, .commentTitle, .vacansyTitle, .aboutContactBody {
+.fs_16, .header, .newsTitle, .service_slide .slideNumber, .consultForm__input, .commentForm__input, .commentForm__textarea, .searchForm__input, .contactRow__text, .gvnpLink, .tableDoctorWrap-sm, .tableDoctorWrap label, .tableDoctorWrap .doctor__selectWrap .select, .tableDoctorWrap .doctorTiming .nameTitle, .tableDoctorWrap .doctorTiming .tableMobile__time, .personalText .name, .commentTitle, .vacansyTitle, .aboutContactBody {
   font-size: 16px; }
 
 .fs_18, .h, .service_slide .slideTitle, .contactRow__title, .tableRow .servPrice {
@@ -2752,7 +2752,7 @@ html {
 .fs_36, .aboutContactTitle {
   font-size: 36px; }
 
-.fc_fff, .mobileMenu, .header, .slider__text, .slider__moreButton, .priceLink, .rulesLink, .consultForm__title, .commentForm__title, .consultForm__input, .commentForm__input, .commentForm__textarea, .copyright, .weLinkWrap, .footer__menu, .gvnpLink, .omsDocLink {
+.fc_fff, .mobileMenu, .header, .searchBlock, .slider__text, .slider__moreButton, .priceLink, .rulesLink, .consultForm__title, .commentForm__title, .consultForm__input, .commentForm__input, .commentForm__textarea, .searchForm__input, .copyright, .weLinkWrap, .footer__menu, .gvnpLink, .omsDocLink {
   color: #ffffff; }
 
 .fc_2e2, .def_title, .aboutBlock__title, .newsBlock__title, .serviceType__title, .payService__title, .contact__title, .pageTitle, .licenseTitle, .def_text, .aboutBlock__text, .newsText, .service_slide .slideText, .service_slide .slideTitle, .contentBlock__title, .contentBlock__list ul, .contactRow, .insCompany__title, .toggleBlock__title, .tableHead, .tableRow, .toggleBlock__toggle_text h2, .toggleBlock__toggle_text h3, .toggleBlock__toggle_text h4, .toggleBlock__toggle_text p, .tableDoctorWrap-sm, .personalText .name, .newsTitle, .newsShortText, .newsFullText, .commentTitle, .vacansyTitle, .commentText, .vacansyText, .aboutText, .aboutContactTitle, .aboutContactBody {
@@ -2776,7 +2776,7 @@ html {
 .fls_07, .def_desc, .def_button, .messBlock__button, .slider__moreButton, .slider__signUpButton, .priceLink, .rulesLink, .consultForm__submit, .commentForm__submit, .newsBlock__allNewsLink, .contentBlock__title, .contentBlock__list ul, .copyright, .weLinkWrap, .footer__menu, .tableHead, .tableRow, .toggleBlock__toggle_text h2, .toggleBlock__toggle_text h3, .toggleBlock__toggle_text h4, .toggleBlock__toggle_text p, .omsDocLink, .newsShortText, .newsReadMore, .newsFullText, .pagination ul, .commentText, .vacansyText, .aboutText {
   letter-spacing: .7px; }
 
-.fls_08, .header, .service_slide .slideNumber, .consultForm__input, .commentForm__input, .commentForm__textarea, .contactRow__text, .gvnpLink, .tableDoctorWrap-sm, .tableDoctorWrap, .personalText .name, .newsTitle, .commentTitle, .vacansyTitle, .aboutContactBody {
+.fls_08, .header, .service_slide .slideNumber, .consultForm__input, .commentForm__input, .commentForm__textarea, .searchForm__input, .contactRow__text, .gvnpLink, .tableDoctorWrap-sm, .tableDoctorWrap, .personalText .name, .newsTitle, .commentTitle, .vacansyTitle, .aboutContactBody {
   letter-spacing: .8px; }
 
 .fls_09, .service_slide .slideTitle, .contactRow__title, .tableRow .servPrice, .tableDoctorWrap label, .tableDoctorWrap .doctor__selectWrap .select {
@@ -2794,7 +2794,7 @@ html {
 .flh_24, .def_text, .aboutBlock__text, .newsText, .service_slide .slideText, .contentBlock__list ul, .copyright, .newsShortText, .newsFullText, .commentTitle, .vacansyTitle, .commentCreateDate, .vacansyCreateDate, .commentText, .vacansyText, .aboutText {
   line-height: 24px; }
 
-.text-align_center, .def_desc, .newsBlock__allNewWrapBottom, .consultForm__form .form-group .help-block, .commentForm__form .form-group .help-block, .consultForm__title, .commentForm__title, .consultForm__input, .commentForm__input, .commentForm__textarea, .contactRow .ico, .dayCount, .servPrice, .gvnpLink, .omsDocLink, .personalText {
+.text-align_center, .def_desc, .newsBlock__allNewWrapBottom, .consultForm__form .form-group .help-block, .commentForm__form .form-group .help-block, .consultForm__title, .commentForm__title, .consultForm__input, .commentForm__input, .commentForm__textarea, .searchForm__input, .contactRow .ico, .dayCount, .servPrice, .gvnpLink, .omsDocLink, .personalText {
   text-align: center; }
 
 .text-transform_uppercase, .newsBlock__allNewsLink, .copyright {
@@ -2806,10 +2806,10 @@ html {
 .flex_col, .page {
   flex-direction: column; }
 
-.relative, .main, .sliderLine, .contentBlock__list ul li, .consultForm__form .form-group, .commentForm__form .form-group, .tableDoctorWrap .doctor__selectWrap, .tableDoctorWrap .doctor__selectWrap .select, .newsPageImgWrap, .pagination ul li {
+.relative, .main, .header, .sliderLine, .contentBlock__list ul li, .consultForm__form .form-group, .commentForm__form .form-group, .tableDoctorWrap .doctor__selectWrap, .tableDoctorWrap .doctor__selectWrap .select, .newsPageImgWrap, .pagination ul li {
   position: relative; }
 
-.absolute, .absolute_100prc, .page.popUp:before, .newsPageImgWrap img, .pagination ul li a, .pagination ul li span, .mobileMenu, .header__mainMenu li ul, .slider__navBlock, .contentBlock__list ul li:before, .bgndImageBlock::before, .consultForm__form .form-group .help-block, .commentForm__form .form-group .help-block, .contactLine .map, .footer__leftBlock, .tableDoctorWrap .doctor__selectWrap:after {
+.absolute, .absolute_100prc, .page.popUp:before, .newsPageImgWrap img, .pagination ul li a, .pagination ul li span, .mobileMenu, .searchBlock, .header__mainMenu li ul, .slider__navBlock, .contentBlock__list ul li:before, .bgndImageBlock::before, .consultForm__form .form-group .help-block, .commentForm__form .form-group .help-block, .contactLine .map, .footer__leftBlock, .tableDoctorWrap .doctor__selectWrap:after {
   position: absolute; }
 
 .absolute_100prc, .page.popUp:before, .newsPageImgWrap img, .pagination ul li a, .pagination ul li span {
@@ -3054,6 +3054,19 @@ svg {
     padding: 10px 0; }
     .header.otherPage .header__logoWrap img {
       max-width: 59px; }
+
+.header__container.blur {
+  -webkit-filter: blur(5px);
+  filter: blur(5px); }
+
+.searchBlock {
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  background-color: rgba(37, 107, 84, 0.7); }
 
 .header__logoWrap {
   font-size: 0; }
@@ -3426,7 +3439,7 @@ svg {
     .consultForm__title, .commentForm__title {
       font-size: 36px; } }
 
-.consultForm__input, .commentForm__input, .commentForm__textarea {
+.consultForm__input, .commentForm__input, .commentForm__textarea, .searchForm__input {
   padding: 14px;
   width: 100%;
   border-bottom: solid 1px rgba(255, 255, 255, 0.3);
@@ -3797,7 +3810,7 @@ svg {
 .commentForm__form {
   padding-bottom: 95px; }
 
-.commentForm__input, .commentForm__textarea {
+.commentForm__input, .commentForm__textarea, .searchForm__input {
   text-align: left; }
 
 .commentForm__textarea {
@@ -3866,6 +3879,20 @@ svg {
 
 .vacansyRow {
   margin-bottom: 45px; }
+
+.searchForm__input {
+  margin: 0; }
+
+.searchContainer {
+  height: 100%; }
+
+.searchRow {
+  height: 100%; }
+
+.searchForm__button {
+  width: 100%;
+  height: 100%;
+  font-size: 0; }
 
 .btn-hamburger {
   display: none;

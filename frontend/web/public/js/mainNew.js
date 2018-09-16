@@ -12,6 +12,22 @@ $('#mMenuClose').on('click', function () {
     $('#panel').removeClass('blur');
 });
 
+$('#searchOpen').on('click', function () {
+    $('.searchBlock').show('drop', 300, function () {
+        $('.header__container').addClass('blur');
+    })
+});
+
+$(document).on('click', function (event) {
+    if ($(event.target).closest(".noneClose").length) {
+        return;
+    }
+    $('.header__container').removeClass('blur', function () {
+        $('.searchBlock').hide('drop', 300);
+    });
+    event.stopPropagation();
+});
+
 
 $(document).on('click', function (event) {
     if ($(event.target).closest(".noneClose").length

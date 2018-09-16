@@ -232,6 +232,7 @@ body{
   }
 }
 
+
 .socIco{
   .socIco_item{
     transition: transform .2s ease, box-shadow .2s ease;
@@ -404,7 +405,7 @@ svg{
 
 //--siteStyle--//
 .header{
-  @extend .f_Montserrat-Medium,.fs_16,.fc_fff,.fls_08;
+  @extend .f_Montserrat-Medium,.fs_16,.fc_fff,.fls_08,.relative;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#3b98fa+0,51d379+100 */
   background: #3b98fa; /* Old browsers */
   background: -moz-linear-gradient(left, #3b98fa 0%, #51d379 100%); /* FF3.6-15 */
@@ -434,6 +435,22 @@ svg{
       }
     }
   }
+}
+.header__container{
+  &.blur{
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+  }
+}
+.searchBlock{
+  @extend .absolute,.f_Montserrat-SemiBold,.fc_fff;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  background-color: rgba(37, 107, 84, 0.7);
 }
 .header__logoWrap{
   font-size: 0;
@@ -1540,4 +1557,21 @@ svg{
 }
 .vacansyText{
   @extend .commentText;
+}
+
+//searchForm
+.searchForm__input{
+  @extend .commentForm__input;
+  margin: 0;
+}
+.searchContainer{
+  height: 100%;
+}
+.searchRow{
+  height: 100%;
+}
+.searchForm__button{
+  width: 100%;
+  height: 100%;
+  font-size: 0;
 }
