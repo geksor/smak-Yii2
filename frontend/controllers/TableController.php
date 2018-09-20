@@ -2,6 +2,9 @@
 
 namespace frontend\controllers;
 
+/* @var $models Doctor */
+/* @var $modelsSm Doctor */
+
 use backend\models\Doctor;
 use backend\models\Position;
 use yii\db\ActiveQuery;
@@ -30,13 +33,14 @@ class TableController extends \yii\web\Controller
     public function nameReplace($models)
     {
         foreach ($models as $model){
+            /* @var $model Doctor */
             $str = $model->name;
 
             $arrName = explode(' ', $str);
 
-            $resName = $arrName[0];
-            $resName .= $arrName[1] ? ' ' . substr($arrName[1],0,2) . '.' : '';
-            $resName .= $arrName[2] ? substr($arrName[2],0,2) . '.' : '';
+            $resName = $arrName[0] . ' ';
+            $resName .= substr($arrName[1],0,2) ? substr($arrName[1],0,2) . '.' : '';
+            $resName .= substr($arrName[2],0,2) ? substr($arrName[2],0,2) . '.' : '';
 
             $model->name = $resName;
         }
