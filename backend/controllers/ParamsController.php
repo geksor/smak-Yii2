@@ -3,8 +3,6 @@
 namespace backend\controllers;
 
 use Yii;
-use backend\models\Callback;
-use backend\models\CallbackSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
