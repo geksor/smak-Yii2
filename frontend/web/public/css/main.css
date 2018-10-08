@@ -3894,6 +3894,9 @@ svg {
   height: 100%;
   font-size: 0; }
 
+.firstField {
+  display: none !important; }
+
 .btn-hamburger {
   display: none;
   max-width: 48px;

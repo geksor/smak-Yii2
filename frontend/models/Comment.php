@@ -8,6 +8,7 @@ use Yii;
  * This is the model class for table "comment".
  *
  * @property int $id
+ * @property string $name
  * @property string $user_name
  * @property string $date
  * @property string $text
@@ -17,6 +18,7 @@ use Yii;
  */
 class Comment extends \yii\db\ActiveRecord
 {
+    public $name; // ловушка для бота
     /**
      * {@inheritdoc}
      */
@@ -35,7 +37,7 @@ class Comment extends \yii\db\ActiveRecord
             [['text', 'email'], 'string'],
             [['publish', 'viewed'], 'integer'],
             [['user_name'], 'string', 'max' => 64],
-            [['date'], 'safe'],
+            [['date', 'name'], 'safe'],
         ];
     }
 
@@ -52,6 +54,7 @@ class Comment extends \yii\db\ActiveRecord
             'email' => 'Email',
             'publish' => 'Publish',
             'viewed' => 'Viewed',
+            'name' => 'Имя',
         ];
     }
 

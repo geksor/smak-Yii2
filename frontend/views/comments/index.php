@@ -43,6 +43,9 @@ $this->title = 'Отзывы';
                     <div class="col-12 col-lg-7 col-xl-6">
                         <h2 class="commentForm__title">Оставить свой отзыв</h2>
                         <?php $form = ActiveForm::begin(['options' => ['class' => 'commentForm__form row']]); ?>
+                        <div class="firstField">
+                            <?= $form->field($formModel, 'name')->textInput() ?>
+                        </div>
 
                         <div class="col-12 col-sm-6">
                             <?= $form->field($formModel, 'user_name')->textInput([

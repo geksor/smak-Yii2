@@ -4,6 +4,7 @@ namespace frontend\controllers;
 
 use frontend\models\Comment;
 use Yii;
+use yii\base\Model;
 use yii\data\Pagination;
 use yii\helpers\VarDumper;
 
@@ -23,7 +24,7 @@ class CommentsController extends \yii\web\Controller
 
         $formModel = new Comment();
 
-        if ($formModel->load(Yii::$app->request->post()) && $formModel->validate()) {
+        if ($formModel->load(Yii::$app->request->post()) && $formModel->validate() && empty($formModel->name)) {
             if ($formModel->save()) {
                 Yii::$app->session->setFlash('mess', 'Спасибо за ваш отзыв!');
                 $formModel = new Comment();
