@@ -43,6 +43,10 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?= $form->field($model, 'shortDay') ?>
                 <?= $form->field($model, 'hollyDay') ?>
 
+                <h2>Прочее</h2>
+
+                <?= $form->field($model, 'priceLink') ?>
+
 
             <div class="form-group">
                     <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>

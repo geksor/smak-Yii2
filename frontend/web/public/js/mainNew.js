@@ -60,6 +60,15 @@ $('#buttonUp').click(function () {
     return false;
 });
 
+var signUp = $('#signUpBlock').offset().top - 200;
+
+$('#signUp').click(function () {
+    $('body,html').animate({
+        scrollTop: signUp
+    }, 500);
+    return false;
+});
+
 $('.service_Slider').slick({
     slidesToShow: 4,
     slidesToScroll: 1,

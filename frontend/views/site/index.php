@@ -27,15 +27,15 @@ $this->title = 'Хирургический центр СМАК - Главная'
             <div class="row slider__buttonRow">
                 <div class="col-12 col-xl-2"></div>
                 <div class="col-12 col-md-4 col-xl-2">
-                    <button class="slider__moreButton">Подробнее</button>
+                    <button class="slider__moreButton"><a href="/about">Подробнее</a></button>
                 </div>
                 <div class="col-12 col-md-4 col-xl-2">
-                    <button class="slider__signUpButton">Записаться онлайн</button>
+                    <button class="slider__signUpButton" id="signUp">Записаться онлайн</button>
                 </div>
             </div>
         </div>
     </div>
-    <div class="slider__navBlock">
+    <div class="slider__navBlock" style="display: none">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-auto">
@@ -98,7 +98,7 @@ $this->title = 'Хирургический центр СМАК - Главная'
             </div>
             <div class="col-12 col-lg-5 col-xl-4">
                 <div class="payService__linksBlock">
-                    <a href="pay-service/index" class="priceLink" title="Прайс-лист">Прайс-лист</a>
+                    <a href="<?= Yii::$app->params['Params']['priceList'] ?>" class="priceLink" title="Прайс-лист">Прайс-лист</a>
                     <a href="reminder/index" class="rulesLink" title="Правила предоставления">Правила предоставления</a>
                 </div>
             </div>
@@ -106,6 +106,7 @@ $this->title = 'Хирургический центр СМАК - Главная'
     </div>
 </div>
 <div class="consultFormLine">
+    <div id="signUpBlock"></div>
     <div class="container">
         <div class="row">
             <div class="bgndImageBlock col-lg-5 col-xl-4">

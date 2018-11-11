@@ -25,6 +25,8 @@ class Params extends Model
     public $shortDay;
     public $hollyDay;
 
+    public $priceLink;
+
 
 
     public function rules()
@@ -48,6 +50,7 @@ class Params extends Model
                     'shortDay',
                     'hollyDay',
                     'bank',
+                    'priceLink',
                 ],
                 'safe'
             ],
@@ -76,6 +79,7 @@ class Params extends Model
             'workDay' => 'Рабочие дни',
             'shortDay' => 'Сокращенные дени',
             'hollyDay' => 'Выходные дни',
+            'priceLink' => 'Ссылка на прайс',
         ];
     }
 }
