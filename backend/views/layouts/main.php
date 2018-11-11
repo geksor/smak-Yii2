@@ -135,7 +135,7 @@ desired effect
                         ],
                         ["label" => "Памятка пациенту", "url" => ["/reminder/index"], "icon" => "info-circle", 'active' => Yii::$app->controller->id == 'reminder'],
                         ["label" => "Отзывы", "url" => ["/comment/index"], "icon" => "comments", 'active' => Yii::$app->controller->id == 'comment'],
-                        ["label" => "Новоти", "url" => ["/news/index"], "icon" => "newspaper-o", 'active' => Yii::$app->controller->id == 'news'],
+                        ["label" => "Новости", "url" => ["/news/index"], "icon" => "newspaper-o", 'active' => Yii::$app->controller->id == 'news'],
                         ["label" => "Галлереи изображений", "url" => ["/gallery/index"], "icon" => "instagram", 'active' => Yii::$app->controller->id == 'gallery'],
                         [
                             "label" => "Страницы",
