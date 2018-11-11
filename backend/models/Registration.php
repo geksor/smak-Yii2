@@ -73,7 +73,7 @@ class Registration extends \yii\db\ActiveRecord
 
         return Yii::$app->mailer->compose()
             ->setTo(Yii::$app->params['Params']['email'])
-            ->setFrom([Yii::$app->params['Params']['email'] => 'SMAK'])
+            ->setFrom(['info@smak05.ru' => 'SMAK'])
             ->setSubject('Заявка на запись от: '. $this->name)
             ->setHtmlBody($body)
             ->send();
