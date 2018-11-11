@@ -62,6 +62,8 @@ $('#buttonUp').click(function () {
 
 var signUp = $('#signUpBlock').offset().top - 200;
 
+console.log(signUp);
+
 $('#signUp').click(function () {
     $('body,html').animate({
         scrollTop: signUp
