@@ -60,11 +60,12 @@ $('#buttonUp').click(function () {
     return false;
 });
 
-var signUp = $('#signUpBlock').offset().top - 200;
-
-console.log(signUp);
 
 $('#signUp').click(function () {
+    var signUp = $('#signUpBlock').offset().top - 200;
+
+    console.log(signUp);
+
     $('body,html').animate({
         scrollTop: signUp
     }, 500);
