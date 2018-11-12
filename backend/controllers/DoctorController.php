@@ -166,6 +166,11 @@ class DoctorController extends Controller
         throw new NotFoundHttpException('The requested page does not exist.');
     }
 
+    /**
+     * @param $id
+     * @return string|\yii\web\Response
+     * @throws NotFoundHttpException
+     */
     public function actionSetPosition($id)
     {
         $doctor = $this->findModel($id);
@@ -191,6 +196,11 @@ class DoctorController extends Controller
         return ArrayHelper::map(Position::find()->all(), 'id', 'title');
     }
 
+    /**
+     * @param $id
+     * @return string|\yii\web\Response
+     * @throws NotFoundHttpException
+     */
     public function actionSetPhoto($id)
     {
         $model = new ImageUpload();
@@ -213,6 +223,11 @@ class DoctorController extends Controller
         ]);
     }
 
+    /**
+     * @param $id
+     * @return string|\yii\web\Response
+     * @throws NotFoundHttpException
+     */
     public function actionSetTable($id)
     {
         $doctor = $this->findModel($id);
@@ -222,6 +237,11 @@ class DoctorController extends Controller
             : $this->createTable($id);
     }
 
+    /**
+     * @param $id
+     * @return string|\yii\web\Response
+     * @throws NotFoundHttpException
+     */
     public function createTable($id)
     {
         $model = new Table();
@@ -236,6 +256,12 @@ class DoctorController extends Controller
             'doctor' => $doctor,
         ]);
     }
+
+    /**
+     * @param $id
+     * @return string|\yii\web\Response
+     * @throws NotFoundHttpException
+     */
     public function updateTable($id)
     {
         $model =  Table::findOne($id);
@@ -251,6 +277,12 @@ class DoctorController extends Controller
         ]);
     }
 
+    /**
+     * @param $id
+     * @param $publish
+     * @return bool|\yii\web\Response
+     * @throws NotFoundHttpException
+     */
     public function actionPublish($id, $publish)
     {
         if (Yii::$app->request->isAjax){
@@ -266,6 +298,13 @@ class DoctorController extends Controller
         return false;
     }
 
+    /**
+     * @param $id
+     * @param $order
+     * @param $up
+     * @return bool|\yii\web\Response
+     * @throws NotFoundHttpException
+     */
     public function actionOrder($id, $order, $up)
     {
         if (Yii::$app->request->isAjax){

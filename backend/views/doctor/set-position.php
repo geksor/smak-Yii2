@@ -27,7 +27,8 @@ $this->params['breadcrumbs'][] = 'Выбор должности';
     <?= Html::dropDownList('positions', $selectedPositions, $positions, [
         'class' => 'form-control',
         'multiple' => true,
-        'style' => 'margin-bottom: 30px;'
+        'style' => 'margin-bottom: 30px;',
+        'size' => 15,
     ]) ?>
 
     <div class="form-group">

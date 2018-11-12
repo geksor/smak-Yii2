@@ -45,6 +45,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         'label' => 'Должность',
                         'value' => function ($data)
                         {
+                            /* @var $data \backend\models\Doctor */
                             return $data->getPositionsTitle();
                         }
                     ],
