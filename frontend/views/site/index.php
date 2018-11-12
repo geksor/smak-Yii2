@@ -98,7 +98,7 @@ $this->title = 'Хирургический центр СМАК - Главная'
             </div>
             <div class="col-12 col-lg-5 col-xl-4">
                 <div class="payService__linksBlock">
-                    <a href="<?= Yii::$app->params['Params']['priceLink'] ?>" class="priceLink" title="Прайс-лист">Прайс-лист</a>
+                    <a href="<?= Yii::$app->params['Params']['priceLink'] ?>" target="_blank" class="priceLink" title="Прайс-лист">Прайс-лист</a>
                     <a href="reminder/index" class="rulesLink" title="Правила предоставления">Правила предоставления</a>
                 </div>
             </div>
