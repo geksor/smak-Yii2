@@ -65,7 +65,7 @@ class Registration extends \yii\db\ActiveRecord
     {
         $body = '<h1>Новая заявка на запись</h1>
                 <p>
-                    <a href="'. Yii::$app->request->absoluteUrl .'admin/registration/view/'. $this->id .'">Ссылка на запись</a>
+                    <a href="'. Yii::$app->request->hostInfo .'/admin/registration/view/'. $this->id .'">Ссылка на запись</a>
                 </p>
                 <h2>Короткая информация</h2>
                 <p> Имя: '.$this->name.'</p>
