@@ -1354,7 +1354,7 @@ svg{
 .personalImgWrap{
   float: left;
   padding: 120px 30px 10px 0;
-  width: 40%;
+  width: 25%;
   .paddingBlock{
     @extend .relative;
     padding-top: 100%;
@@ -1368,6 +1368,7 @@ svg{
   }
   @include media-breakpoint-down(md){
     padding-top: 70px;
+    width: 40%;
   }
   @include media-breakpoint-down(sm){
     float: none;

@@ -3749,7 +3749,7 @@ svg {
 .personalImgWrap {
   float: left;
   padding: 120px 30px 10px 0;
-  width: 40%; }
+  width: 25%; }
   .personalImgWrap .paddingBlock {
     padding-top: 100%;
     width: 100%; }
@@ -3759,7 +3759,8 @@ svg {
       object-fit: cover; }
   @media (max-width: 991.98px) {
     .personalImgWrap {
-      padding-top: 70px; } }
+      padding-top: 70px;
+      width: 40%; } }
   @media (max-width: 767.98px) {
     .personalImgWrap {
       float: none;
