@@ -8,7 +8,7 @@ use yii\helpers\FileHelper;
  * @throws \yii\base\Exception
  */
 function jsonFile($fileName){
-    $dir = __DIR__;
+    $dir = __DIR__ . '/';
     $file = $dir.$fileName.'.json';
     if (!is_dir($dir)){
         FileHelper::createDirectory($dir);
