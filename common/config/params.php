@@ -1,9 +1,30 @@
 <?php
-$jsonFile = json_decode(file_get_contents(__DIR__. '/set.json'), true);
-$about = json_decode(file_get_contents(__DIR__. '/about.json'), true);
-$vacancy = json_decode(file_get_contents(__DIR__. '/vacancy.json'), true);
-$reminder = json_decode(file_get_contents(__DIR__. '/reminder.json'), true);
-$payService = json_decode(file_get_contents(__DIR__. '/payService.json'), true);
+
+use yii\helpers\FileHelper;
+
+/**
+ * @param string $fileName
+ * @return string
+ * @throws \yii\base\Exception
+ */
+function jsonFile($fileName){
+    $dir = __DIR__;
+    $file = $dir.$fileName.'.json';
+    if (!is_dir($dir)){
+        FileHelper::createDirectory($dir);
+    }
+
+    if (!is_file($file)){
+        file_put_contents($file, '{}');
+    }
+    return json_decode(file_get_contents($file), true);
+}
+
+$jsonFile = jsonFile('set');
+$about = jsonFile('about');
+$vacancy = jsonFile('vacancy');
+$reminder = jsonFile('reminder');
+$payService = jsonFile('payService');
 
 return [
     'adminEmail' => 'admin@example.com',
