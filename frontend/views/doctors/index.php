@@ -1,6 +1,6 @@
 <?php
 /* @var $this yii\web\View */
-/* @var $models \backend\models\Doctor */
+/* @var $models \backend\models\Doctor[] */
 
 $this->title = 'Специалисты нашего центра';
 ?>
@@ -22,14 +22,12 @@ $this->title = 'Специалисты нашего центра';
                                         <div class="personalText">
                                             <p class="name"><?= $model->name ?></p>
                                             <p class="job">
-                                                <? $positionsCount = count($model->positions); ?>
-                                                <?foreach ($model->positions as $key => $position) {?>
-                                                    <?= $position->title?><?= count($model->positions) == ++$key ? '' : ', ' ?>
-                                                <?}?>
+                                                <?= $model->getPositionsTitle() ?>
                                             </p>
                                         </div>
                                     </div>
                                 </div>
+                                <?= \yii\helpers\Html::a('', ['view', 'id' => $model->id], ['class' => 'personalLink']) ?>
                             </div>
                         </div>
                     <?}?>

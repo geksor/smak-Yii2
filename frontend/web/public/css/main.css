@@ -2716,7 +2716,7 @@ html {
 @font-face {
   font-family: Montserrat-Medium;
   src: url(../css/fonts/Montserrat-Medium.ttf); }
-.f_Montserrat-Medium, .def_text, .aboutBlock__text, .newsText, .service_slide .slideText, .header, .slider__text, .contentBlock__list ul, .consultForm__title, .commentForm__title, .contactRow__text, .copyright, .weLinkWrap, .footer__menu, .toggleBlock__title, .gvnpLink, .omsDocLink, .tableDoctorWrap-sm .otherRow, .tableDoctorWrap .doctor__selectWrap .select option, .tableDoctorWrap .doctorTiming .tableMobile__time, .personalText, .pagination ul, .aboutContactBody {
+.f_Montserrat-Medium, .def_text, .aboutBlock__text, .newsText, .service_slide .slideText, .header, .slider__text, .contentBlock__list ul, .consultForm__title, .commentForm__title, .contactRow__text, .copyright, .weLinkWrap, .footer__menu, .toggleBlock__title, .gvnpLink, .omsDocLink, .tableDoctorWrap-sm .otherRow, .tableDoctorWrap .doctor__selectWrap .select option, .tableDoctorWrap .doctorTiming .tableMobile__time, .personalText, .personalPosition, .pagination ul, .aboutContactBody {
   font-family: Montserrat-Medium, sans-serif; }
 
 @font-face {
@@ -2740,7 +2740,7 @@ html {
 .fs_16, .header, .newsTitle, .service_slide .slideNumber, .consultForm__input, .commentForm__input, .commentForm__textarea, .searchForm__input, .contactRow__text, .gvnpLink, .tableDoctorWrap-sm, .tableDoctorWrap label, .tableDoctorWrap .doctor__selectWrap .select, .tableDoctorWrap .doctorTiming .nameTitle, .tableDoctorWrap .doctorTiming .tableMobile__time, .personalText .name, .commentTitle, .vacansyTitle, .aboutContactBody {
   font-size: 16px; }
 
-.fs_18, .h, .service_slide .slideTitle, .contactRow__title, .tableRow .servPrice {
+.fs_18, .h, .service_slide .slideTitle, .contactRow__title, .tableRow .servPrice, .personalPosition {
   font-size: 18px; }
 
 .fs_24, .def_title, .aboutBlock__title, .newsBlock__title, .serviceType__title, .payService__title, .contact__title, .pageTitle, .licenseTitle, .slider__text, .consultForm__title, .commentForm__title, .insCompany__title, .toggleBlock__title {
@@ -2806,13 +2806,13 @@ html {
 .flex_col, .page {
   flex-direction: column; }
 
-.relative, .main, .header, .sliderLine, .contentBlock__list ul li, .consultForm__form .form-group, .commentForm__form .form-group, .tableDoctorWrap .doctor__selectWrap, .tableDoctorWrap .doctor__selectWrap .select, .newsPageImgWrap, .pagination ul li {
+.relative, .main, .header, .sliderLine, .contentBlock__list ul li, .consultForm__form .form-group, .commentForm__form .form-group, .tableDoctorWrap .doctor__selectWrap, .tableDoctorWrap .doctor__selectWrap .select, .personalBlock, .personalImgWrap .paddingBlock, .newsPageImgWrap, .pagination ul li {
   position: relative; }
 
-.absolute, .absolute_100prc, .page.popUp:before, .newsPageImgWrap img, .pagination ul li a, .pagination ul li span, .mobileMenu, .searchBlock, .header__mainMenu li ul, .slider__navBlock, .contentBlock__list ul li:before, .bgndImageBlock::before, .consultForm__form .form-group .help-block, .commentForm__form .form-group .help-block, .contactLine .map, .footer__leftBlock, .tableDoctorWrap .doctor__selectWrap:after {
+.absolute, .absolute_100prc, .page.popUp:before, .personalBlock .personalLink, .personalImgWrap .paddingBlock img, .newsPageImgWrap img, .pagination ul li a, .pagination ul li span, .mobileMenu, .searchBlock, .header__mainMenu li ul, .slider__navBlock, .contentBlock__list ul li:before, .bgndImageBlock::before, .consultForm__form .form-group .help-block, .commentForm__form .form-group .help-block, .contactLine .map, .footer__leftBlock, .tableDoctorWrap .doctor__selectWrap:after {
   position: absolute; }
 
-.absolute_100prc, .page.popUp:before, .newsPageImgWrap img, .pagination ul li a, .pagination ul li span {
+.absolute_100prc, .page.popUp:before, .personalBlock .personalLink, .personalImgWrap .paddingBlock img, .newsPageImgWrap img, .pagination ul li a, .pagination ul li span {
   top: 0;
   right: 0;
   bottom: 0;
@@ -3739,6 +3739,35 @@ svg {
 
 .personalText .name {
   margin-bottom: 15px; }
+
+.personalTitle {
+  padding-bottom: 15px; }
+
+.personalPosition {
+  padding-bottom: 30px; }
+
+.personalImgWrap {
+  float: left;
+  padding: 120px 30px 10px 0;
+  width: 40%; }
+  .personalImgWrap .paddingBlock {
+    padding-top: 100%;
+    width: 100%; }
+    .personalImgWrap .paddingBlock img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; }
+  @media (max-width: 991.98px) {
+    .personalImgWrap {
+      padding-top: 70px; } }
+  @media (max-width: 767.98px) {
+    .personalImgWrap {
+      float: none;
+      width: 100%;
+      padding: 35px 0 0; } }
+
+.personalContainer {
+  padding-bottom: 30px; }
 
 .newsRow {
   margin-bottom: 60px; }

@@ -81,9 +81,12 @@ class Doctor extends \yii\db\ActiveRecord
 
         if ($this->positions)
         {
-            foreach ($this->positions as $position)
+            $positionsCount = count($this->positions);
+
+            foreach ($this->positions as $key => $position)
             {
-                $positionsTitle .= $position->title . ", ";
+                $end = $positionsCount === ++$key ? '' : ', ';
+                $positionsTitle .= $position->title . $end;
             }
         }
 

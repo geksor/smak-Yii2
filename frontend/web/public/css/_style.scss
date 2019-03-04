@@ -1316,9 +1316,13 @@ svg{
 
 //PersonalPage
 .personalBlock{
+  @extend .relative;
   border: solid 1px #d1d5da;
   padding: 15px;
   margin-bottom: 30px;
+  .personalLink {
+    @extend .absolute_100prc;
+  }
 }
 .personalImg{
   font-size: 0;
@@ -1339,6 +1343,41 @@ svg{
   .job{
     @extend .fs_12,.fls_06,.fc_7e7e;
   }
+}
+.personalTitle{
+  padding-bottom: 15px;
+}
+.personalPosition{
+  @extend .fs_18,.f_Montserrat-Medium;
+  padding-bottom: 30px;
+}
+.personalImgWrap{
+  float: left;
+  padding: 120px 30px 10px 0;
+  width: 40%;
+  .paddingBlock{
+    @extend .relative;
+    padding-top: 100%;
+    width: 100%;
+    img{
+      @extend .absolute_100prc;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  @include media-breakpoint-down(md){
+    padding-top: 70px;
+  }
+  @include media-breakpoint-down(sm){
+    float: none;
+    width: 100%;
+    padding: 35px 0 0;
+  }
+
+}
+.personalContainer{
+  padding-bottom: 30px;
 }
 
 //NewsPage
