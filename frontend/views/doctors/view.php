@@ -8,7 +8,9 @@ $this->title = $model->name;
 <div class="container personalContainer">
     <div class="personalImgWrap">
         <div class="paddingBlock">
-            <?= \yii\helpers\Html::img($model->getThumbPhoto(), ['alt' => $model->name])?>
+            <a href="<?= $model->getPhoto() ?>" data-fancybox="personal" data-caption="<?= $model->name ?>">
+                <?= \yii\helpers\Html::img($model->getThumbPhoto(), ['alt' => $model->name])?>
+            </a>
         </div>
     </div>
     <h1 class="pageTitle personalTitle"><?= $this->title ?></h1>
