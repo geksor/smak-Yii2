@@ -15,7 +15,7 @@ $this->title = $model->name;
     </div>
     <h1 class="pageTitle personalTitle"><?= $this->title ?></h1>
     <h2 class="personalPosition"><?= $model->getPositionsTitle() ?></h2>
-    <p class="personalDescription"><?= $model->info ?></p>
-    <p class="personalDescription"><?= $model->diplom ?></p>
+    <p class="personalDescription" style="margin-top: 10px"><?= $model->info ?></p>
+    <p class="personalDescription" style="margin-top: 10px"><?= $model->diplom ?></p>
     <div style="clear: both"></div>
 </div>
